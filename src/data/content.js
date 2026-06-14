@@ -1,10 +1,3 @@
-import coffeeLoungeImage from "../assets/coffee_lounge.PNG";
-import rooftopDiningImage from "../assets/Rooftop Dining.PNG";
-import luxuryHotelsImage from "../assets/Luxury Hotels.PNG";
-import spaRecoveryImage from "../assets/Spa & Recovery.PNG";
-import weekendGetawaysImage from "../assets/Weekend Getaways.PNG";
-import yachtExperiencesImage from "../assets/Yacht Experiences.PNG";
-import culturalEventsImage from "../assets/Cultural Events.PNG";
 
 export const INSIGHTS = [
   { num: "I.", text: "You ignore red flags because the connection feels strong." },
@@ -32,17 +25,6 @@ export const AI_FEATURES = [
   "Reflect before reacting",
   "Build clarity before commitment",
 ];
-
-// export const EXPERIENCES = [
-//   { id: 1, title: "Restaurants", soon: true, image: rooftopDiningImage },
-//   { id: 2, title: "Coffee Lounges", soon: true, image: coffeeLoungeImage },
-//   { id: 3, title: "Rooftop Venues", soon: true, image: rooftopDiningImage },
-//   { id: 4, title: "Hotels", soon: true, image: luxuryHotelsImage },
-//   { id: 5, title: "Wellness Experiences", soon: true, image: yachtExperiencesImage },
-//   { id: 6, title: "Travel Experiences", soon: true, image: weekendGetawaysImage },
-//   { id: 7, title: "Activity Providers", soon: true, image: culturalEventsImage },
-//   { id: 8, title: "Premium Experiences", soon: true, image: spaRecoveryImage },
-// ];
 
 export const EXPERIENCES = [
   "Restaurants",

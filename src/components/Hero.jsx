@@ -31,7 +31,14 @@ export default function Hero() {
 
         <Reveal className="hero-visual" delay=".2s">
           <div className="frame">
-            <img src={founderImage} alt="A moment of reflection before connection" />
+            <img
+              src={founderImage}
+              alt="A moment of reflection before connection"
+              width="733"
+              height="1100"
+              fetchPriority="high"
+              decoding="async"
+            />
             <span className="hero-tag">Choose with clarity.</span>
           </div>
         </Reveal>

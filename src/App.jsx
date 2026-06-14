@@ -10,8 +10,16 @@ import EarlyAccess from "./components/EarlyAccess.jsx";
 import Standard from "./components/Standard.jsx";
 import FinalCta from "./components/FinalCta.jsx";
 import Footer from "./components/Footer.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
+import useRoute from "./hooks/useRoute.js";
 
 export default function App() {
+  const path = useRoute();
+
+  if (path === "/privacy-policy") {
+    return <PrivacyPolicy />;
+  }
+
   return (
     <>
       <Navbar />
