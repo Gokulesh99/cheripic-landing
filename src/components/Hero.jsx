@@ -1,7 +1,10 @@
 import Reveal from "./Reveal.jsx";
 import Button from "./Button.jsx";
 import Eyebrow from "./Eyebrow.jsx";
-import founderImage from "../assets/founder.jpg";
+
+// Served from /public as an optimized WebP and preloaded in index.html so it
+// can start downloading before the React bundle parses (faster LCP).
+const founderImage = "/founder.webp";
 
 
 export default function Hero() {

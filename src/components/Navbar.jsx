@@ -28,6 +28,7 @@ export default function Navbar() {
             alt="CheriPic — Clarity Before Connection"
             width="480"
             height="320"
+            fetchPriority="high"
             decoding="async"
           />
         </a>

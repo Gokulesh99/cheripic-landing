@@ -1,0 +1,21 @@
+{
+  "name": "CheriPic - Clarity Before Connection",
+  "short_name": "CheriPic",
+  "description": "The world's first Verified Relationship Intelligence Platform",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#6c4fb0",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

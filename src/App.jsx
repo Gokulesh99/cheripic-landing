@@ -1,23 +1,30 @@
+import { lazy, Suspense } from "react";
 import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import Insights from "./components/Insights.jsx";
-import NotADatingApp from "./components/NotADatingApp.jsx";
-import HowItWorks from "./components/HowItWorks.jsx";
-import CheriAI from "./components/CheriAI.jsx";
-import Experiences from "./components/Experiences.jsx";
-import WhoFor from "./components/WhoFor.jsx";
-import EarlyAccess from "./components/EarlyAccess.jsx";
-import Standard from "./components/Standard.jsx";
-import FinalCta from "./components/FinalCta.jsx";
-import Footer from "./components/Footer.jsx";
-import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
 import useRoute from "./hooks/useRoute.js";
+
+// Lazy load below-the-fold components
+const NotADatingApp = lazy(() => import("./components/NotADatingApp.jsx"));
+const HowItWorks = lazy(() => import("./components/HowItWorks.jsx"));
+const CheriAI = lazy(() => import("./components/CheriAI.jsx"));
+const Experiences = lazy(() => import("./components/Experiences.jsx"));
+const WhoFor = lazy(() => import("./components/WhoFor.jsx"));
+const EarlyAccess = lazy(() => import("./components/EarlyAccess.jsx"));
+const Standard = lazy(() => import("./components/Standard.jsx"));
+const FinalCta = lazy(() => import("./components/FinalCta.jsx"));
+const Footer = lazy(() => import("./components/Footer.jsx"));
+const PrivacyPolicy = lazy(() => import("./components/PrivacyPolicy.jsx"));
 
 export default function App() {
   const path = useRoute();
 
   if (path === "/privacy-policy") {
-    return <PrivacyPolicy />;
+    return (
+      <Suspense fallback={<div style={{ minHeight: "100vh" }} />}>
+        <PrivacyPolicy />
+      </Suspense>
+    );
   }
 
   return (
@@ -26,16 +33,18 @@ export default function App() {
       <main id="top">
         <Hero />
         <Insights />
-        <NotADatingApp />
-        <HowItWorks />
-        <CheriAI />
-        <Experiences />
-        <WhoFor />
-        <EarlyAccess />
-        <Standard />
-        <FinalCta />
+        <Suspense fallback={<div style={{ minHeight: "50vh" }} />}>
+          <NotADatingApp />
+          <HowItWorks />
+          <CheriAI />
+          <Experiences />
+          <WhoFor />
+          <EarlyAccess />
+          <Standard />
+          <FinalCta />
+          <Footer />
+        </Suspense>
       </main>
-      <Footer />
     </>
   );
 }
