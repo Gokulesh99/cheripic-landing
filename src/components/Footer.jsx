@@ -49,7 +49,16 @@ export default function Footer() {
             Privacy Policy
           </a>
           <span aria-hidden="true"> · </span>
-          Disclaimer
+          <a
+            href="/privacy-policy"
+            className="foot-legal-link"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/privacy-policy");
+            }}
+          >
+            Disclaimer
+          </a>
         </span>
         <span>© 2026 CheriPic. All rights reserved.</span>
       </div>
