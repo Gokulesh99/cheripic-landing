@@ -4,7 +4,8 @@
       "Bash(node -e \"const sharp=require\\('sharp'\\);\\(async\\(\\)=>{for\\(const f of ['public/favicon.svg','src/assets/logo.png','src/assets/founder.jpg']\\){try{const m=await sharp\\(f\\).metadata\\(\\);console.log\\(f, m.width+'x'+m.height, m.format\\)}catch\\(e\\){console.log\\(f,'ERR',e.message\\)}}}\\)\\(\\)\")",
       "Bash(node -e ' *)",
       "Bash(rm -f public/logo.webp public/favicon.svg && echo \"removed logo.webp + 616KB favicon.svg\" && ls -la public)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(node -e \"require\\('sharp'\\)\\('src/assets/metacheripicImage.png'\\).metadata\\(\\).then\\(m=>console.log\\(m.width+'x'+m.height, m.format\\)\\)\")"
     ],
     "additionalDirectories": [
       "/Users/saiswaroop/Documents/Projects/cheripic/landing/cheripic-landing/public"
