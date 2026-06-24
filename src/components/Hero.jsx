@@ -4,7 +4,7 @@ import Eyebrow from "./Eyebrow.jsx";
 
 // Served from /public as an optimized WebP and preloaded in index.html so it
 // can start downloading before the React bundle parses (faster LCP).
-const founderImage = "/founder.webp";
+const founderImage = "/newFounder.webp";
 
 
 export default function Hero() {
@@ -13,17 +13,18 @@ export default function Hero() {
       <div className="hero-glow" />
       <div className="wrap hero-grid">
         <div className="hero-copy">
-          <Reveal as={Eyebrow}>Clarity Before Connection</Reveal>
           <Reveal as="h1" delay=".08s">
-            The Wrong Relationship Rarely Feels Wrong&nbsp;At&nbsp;First.
+            Find the <span className="hl">Right Romantic Partner.</span>
+          </Reveal>
+          <Reveal className="hero-divider" delay=".12s">
+            <span className="hero-heart" aria-hidden="true">&#9829;</span>
           </Reveal>
           <Reveal as="p" className="lead" delay=".16s">
-            CheriPic helps you recognize patterns, understand compatibility, and
-            build clarity <span className="serif-accent">before</span> emotional
-            attachment takes over.
+            CheriPic helps you avoid the wrong relationships and choose the{" "}
+            <span className="hl">right person</span> before you fall in love.
           </Reveal>
           <Reveal className="hero-actions" delay=".24s">
-            <Button href="#join" variant="primary" withArrow>Join Early Access</Button>
+            <Button href="#join" variant="primary" withArrow>JOIN FOR FREE</Button>
             <Button href="#how" variant="ghost">See How It Works</Button>
           </Reveal>
           <Reveal as="p" className="hero-micro" delay=".32s">
@@ -42,7 +43,6 @@ export default function Hero() {
               fetchPriority="high"
               decoding="async"
             />
-            <span className="hero-tag">Choose with clarity.</span>
           </div>
         </Reveal>
       </div>

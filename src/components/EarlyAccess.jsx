@@ -16,7 +16,7 @@ export default function EarlyAccess() {
         </p>
         <div className="hero-actions">
           <Button href={LINKS.earlyAccessMailto} variant="primary" withArrow>
-            Join Early Access
+            JOIN FOR FREE
           </Button>
           <Button href={LINKS.instagram} variant="ghost" target="_blank" rel="noopener">
             Follow @cheripic_official

@@ -12,7 +12,7 @@ export default function FinalCta() {
           Because the right relationship is too important to leave entirely to
           chemistry.
         </p>
-        <Button href="#join" variant="primary" withArrow>Join Early Access</Button>
+        <Button href="#join" variant="primary" withArrow>JOIN FOR FREE</Button>
       </Reveal>
     </section>
   );

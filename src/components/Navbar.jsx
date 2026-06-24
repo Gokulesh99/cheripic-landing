@@ -33,7 +33,7 @@ export default function Navbar() {
           />
         </a>
         <a href={onHome ? "#join" : "/#join"} className="nav-cta" onClick={goJoin}>
-          Join Early Access
+          JOIN FOR FREE
         </a>
       </div>
     </nav>
