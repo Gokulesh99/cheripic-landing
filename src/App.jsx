@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar.jsx";
 import Hero from "./components/Hero.jsx";
 import Insights from "./components/Insights.jsx";
 import useRoute from "./hooks/useRoute.js";
+import useHashLinks from "./hooks/useHashLinks.js";
 
 // Lazy load below-the-fold components
 const NotADatingApp = lazy(() => import("./components/NotADatingApp.jsx"));
@@ -18,6 +19,7 @@ const PrivacyPolicy = lazy(() => import("./components/PrivacyPolicy.jsx"));
 
 export default function App() {
   const path = useRoute();
+  useHashLinks();
 
   if (path === "/privacy-policy") {
     return (

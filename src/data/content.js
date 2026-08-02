@@ -56,6 +56,7 @@ export const STANDARDS = [
 export const LINKS = {
   instagram: "https://instagram.com/cheripic_official",
   email: "shane@cheripic.com",
+  supportEmail: "support@cheripic.com",
   earlyAccessMailto:
     "mailto:shane@cheripic.com?subject=CheriPic%20Early%20Access",
 };

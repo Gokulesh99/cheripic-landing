@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import scrollToId from "../utils/scrollToId.js";
 
 // Minimal client-side router built on the History API — no extra dependencies.
 // `navigate("/path")` or `navigate("/#join")` updates the URL and notifies
@@ -11,12 +12,8 @@ export function navigate(to) {
   window.dispatchEvent(new PopStateEvent("popstate"));
 
   if (hash) {
-    // Wait for the destination view to render before scrolling to the anchor.
-    requestAnimationFrame(() =>
-      requestAnimationFrame(() => {
-        document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
-      })
-    );
+    // scrollToId waits for the (lazy-mounted) destination section itself.
+    scrollToId(hash);
   } else {
     window.scrollTo(0, 0);
   }

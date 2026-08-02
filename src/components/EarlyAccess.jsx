@@ -1,9 +1,19 @@
+import { useState, useCallback } from "react";
 import Reveal from "./Reveal.jsx";
 import Button from "./Button.jsx";
 import Eyebrow from "./Eyebrow.jsx";
+import ComingSoonModal from "./ComingSoonModal.jsx";
 import { LINKS } from "../data/content.js";
 
 export default function EarlyAccess() {
+  const [showComingSoon, setShowComingSoon] = useState(false);
+  const closeComingSoon = useCallback(() => setShowComingSoon(false), []);
+
+  const openComingSoon = (e) => {
+    e.preventDefault();
+    setShowComingSoon(true);
+  };
+
   return (
     <section className="sec s8" id="join">
       <Reveal className="wrap inner">
@@ -15,7 +25,12 @@ export default function EarlyAccess() {
           category in relationship intelligence.
         </p>
         <div className="hero-actions">
-          <Button href={LINKS.earlyAccessMailto} variant="primary" withArrow>
+          <Button
+            href={LINKS.earlyAccessMailto}
+            variant="primary"
+            withArrow
+            onClick={openComingSoon}
+          >
             JOIN FOR FREE
           </Button>
           <Button href={LINKS.instagram} variant="ghost" target="_blank" rel="noopener">
@@ -23,6 +38,7 @@ export default function EarlyAccess() {
           </Button>
         </div>
       </Reveal>
+      <ComingSoonModal open={showComingSoon} onClose={closeComingSoon} />
     </section>
   );
 }

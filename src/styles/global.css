@@ -16,7 +16,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 118px; }
 body {
   background: var(--black);
   color: var(--ivory);
@@ -31,11 +31,15 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 
 /* Performance optimizations */
-section { 
+section {
   position: relative;
   content-visibility: auto;
   contain-intrinsic-size: auto 500px;
 }
+/* While an in-page jump is being measured, nothing may stay skipped: a section
+   sitting at its 500px placeholder height puts the anchor in the wrong place.
+   Set and cleared by scrollToId. */
+html.jump-scroll section { content-visibility: visible; }
 
 /* layout */
 .wrap { max-width: 1180px; margin: 0 auto; padding: 0 28px; }
@@ -85,6 +89,167 @@ h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); }
 .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 .btn-arrow { transition: transform 0.5s ease; }
 .btn:hover .btn-arrow { transform: translateX(4px); }
+
+/* coming soon modal */
+.modal-backdrop {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  background: radial-gradient(120% 100% at 50% 0%, rgba(60, 34, 110, 0.55) 0%, rgba(5, 5, 8, 0.86) 62%);
+  backdrop-filter: blur(10px);
+  animation: modal-fade 0.5s ease both;
+}
+.modal-card {
+  position: relative; isolation: isolate;
+  width: 100%; max-width: 560px;
+  padding: 58px 56px 52px;
+  border-radius: 4px; text-align: center;
+  border: 1px solid rgba(233, 229, 219, 0.1);
+  background:
+    radial-gradient(90% 70% at 50% -10%, rgba(108, 79, 176, 0.3) 0%, rgba(13, 12, 18, 0) 62%),
+    linear-gradient(168deg, #14111d 0%, #0b0a10 55%, #0a090e 100%);
+  box-shadow: 0 40px 110px rgba(0, 0, 0, 0.72), 0 0 60px rgba(108, 79, 176, 0.16);
+  animation: modal-rise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
+  /* Scrolls internally rather than overflowing short viewports (landscape
+     phones); x stays clipped so the halo and edge filament are contained. */
+  max-height: 100%; overflow: hidden auto;
+  scrollbar-width: thin; scrollbar-color: rgba(138, 114, 192, 0.5) transparent;
+}
+/* violet filament that sweeps across the top edge */
+.modal-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%, rgba(199, 125, 255, 0) 18%, var(--purple-soft) 42%,
+    #d7b6ff 50%, var(--purple-soft) 58%, rgba(199, 125, 255, 0) 82%, transparent 100%);
+  background-size: 220% 100%;
+  animation: modal-sweep 7s ease-in-out 0.6s infinite;
+}
+.modal-halo {
+  position: absolute; top: -110px; left: 50%; z-index: -1;
+  width: 420px; height: 300px; transform: translateX(-50%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(138, 114, 192, 0.4) 0%, rgba(108, 79, 176, 0) 70%);
+  filter: blur(14px);
+  animation: modal-breathe 7s ease-in-out infinite;
+}
+.modal-close {
+  position: absolute; top: 20px; right: 20px;
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; padding: 0;
+  background: none; border: 1px solid transparent; border-radius: 50%;
+  color: var(--muted); cursor: pointer;
+  transition: color 0.5s ease, border-color 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-close:hover { color: var(--gold); border-color: rgba(179, 154, 114, 0.34); transform: rotate(90deg); }
+.modal-close:focus-visible { outline: 1px solid var(--gold); outline-offset: 3px; }
+
+.modal-logo { display: flex; justify-content: center; }
+.modal-logo img {
+  width: 132px; height: auto;
+  animation: modal-float 6.5s ease-in-out infinite;
+}
+.modal-eyebrow {
+  margin-top: 26px;
+  font-size: 0.68rem; letter-spacing: 0.44em; text-transform: uppercase;
+  color: var(--gold); font-weight: 400;
+}
+.modal-title {
+  margin-top: 16px;
+  font-size: clamp(1.75rem, 4.6vw, 2.5rem);
+  line-height: 1.14; letter-spacing: -0.01em;
+}
+.modal-rule {
+  display: block; width: 74px; height: 1px; margin: 26px auto;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.6;
+}
+.modal-text {
+  max-width: 40ch; margin: 0 auto;
+  font-size: clamp(0.96rem, 2vw, 1.06rem);
+  font-weight: 300; line-height: 1.72; color: var(--ivory-dim);
+}
+.modal-contact {
+  margin-top: 30px;
+  font-size: 0.66rem; letter-spacing: 0.32em; text-transform: uppercase;
+  color: var(--muted);
+}
+.modal-email {
+  display: inline-block; margin-top: 10px;
+  font-family: var(--serif); font-size: 1.4rem; font-weight: 500;
+  letter-spacing: 0.01em; color: var(--headline);
+  background-image: linear-gradient(90deg, var(--purple-soft), var(--gold));
+  background-repeat: no-repeat; background-position: 0 100%; background-size: 0% 1px;
+  transition: background-size 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.5s ease;
+}
+.modal-email:hover { color: var(--gold); background-size: 100% 1px; }
+.modal-email:focus-visible { outline: 1px solid var(--gold); outline-offset: 4px; }
+
+/* staggered entrance for the card's contents */
+.modal-logo, .modal-eyebrow, .modal-title,
+.modal-rule, .modal-text, .modal-contact, .modal-email {
+  animation: modal-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.modal-logo { animation-delay: 0.14s; }
+.modal-eyebrow { animation-delay: 0.24s; }
+.modal-title { animation-delay: 0.32s; }
+.modal-rule { animation-delay: 0.4s; }
+.modal-text { animation-delay: 0.46s; }
+.modal-contact { animation-delay: 0.54s; }
+.modal-email { animation-delay: 0.6s; }
+/* the logo keeps floating once it has settled in */
+.modal-logo img { animation-delay: 1s; }
+
+@keyframes modal-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-rise {
+  from { opacity: 0; transform: translateY(26px) scale(0.975); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes modal-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+@keyframes modal-breathe {
+  0%, 100% { opacity: 0.55; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.08); }
+}
+@keyframes modal-sweep {
+  0% { background-position: 120% 0; }
+  55%, 100% { background-position: -120% 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .modal-backdrop, .modal-card, .modal-card::before, .modal-halo,
+  .modal-logo, .modal-logo img, .modal-eyebrow, .modal-title,
+  .modal-rule, .modal-text, .modal-contact, .modal-email { animation: none; }
+}
+@media (max-width: 640px) {
+  .modal-backdrop { padding: 16px; }
+  .modal-card { padding: 46px 24px 38px; border-radius: 3px; }
+  .modal-close { top: 12px; right: 12px; }
+  .modal-logo img { width: 108px; }
+  .modal-eyebrow { margin-top: 22px; letter-spacing: 0.34em; }
+  .modal-rule { margin: 20px auto; width: 62px; }
+  .modal-contact { margin-top: 24px; letter-spacing: 0.26em; }
+  .modal-email { font-size: 1.22rem; }
+  .modal-halo { width: 300px; height: 220px; top: -80px; }
+}
+@media (max-width: 380px) {
+  .modal-card { padding: 40px 18px 32px; }
+  /* the address must never wrap or clip on a narrow phone */
+  .modal-email { font-size: 1.05rem; }
+  .modal-contact { letter-spacing: 0.2em; }
+}
+/* Short/landscape viewports: tighten the vertical rhythm so the CTA stays reachable. */
+@media (max-height: 620px) {
+  .modal-card { padding: 34px 40px 30px; }
+  .modal-logo img { width: 88px; }
+  .modal-eyebrow { margin-top: 16px; }
+  .modal-title { margin-top: 10px; font-size: clamp(1.5rem, 3.6vw, 1.9rem); }
+  .modal-rule { margin: 16px auto; }
+  .modal-contact { margin-top: 18px; }
+}
 
 /* nav */
 .nav {
@@ -438,7 +603,9 @@ footer { background: var(--ink); border-top: 1px solid var(--line); padding: 80p
   }
   .hero-copy h1 { margin: 0; }
   .hero-copy .lead { margin: 0 auto; max-width: 36ch; }
-  .hero-actions, .hero-micro { display: none; }
+  /* Scoped to the hero: .hero-actions is reused by the Early Access CTA,
+     which must stay visible on mobile. */
+  .hero-copy .hero-actions, .hero-micro { display: none; }
   /* heart divider between headline and lead */
   .hero-divider {
     display: flex; align-items: center; justify-content: center;
