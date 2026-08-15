@@ -444,6 +444,12 @@ footer { background: var(--ink); border-top: 1px solid var(--line); padding: 80p
 .foot-col h4 { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ivory-dim); margin-bottom: 18px; font-weight: 400; }
 .foot-col a { display: block; color: var(--muted); font-size: 0.95rem; margin-bottom: 12px; transition: color 0.4s; }
 .foot-col a:hover { color: var(--gold); }
+.foot-socials { display: flex; align-items: center; gap: 20px; }
+.foot-col a.foot-social {
+  flex: 0 0 auto; width: 20px; height: 20px; margin-bottom: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.foot-social svg { width: 100%; height: 100%; display: block; }
 .foot-bottom {
   margin-top: 60px; padding-top: 28px; border-top: 1px solid var(--line);
   display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px;

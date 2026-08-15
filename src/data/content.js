@@ -57,6 +57,8 @@ export const LINKS = {
   instagram: "https://instagram.com/cheripic_official",
   email: "shane@cheripic.com",
   supportEmail: "support@cheripic.com",
+  twitter: "https://x.com/ShaneGoodgie",
+  whatsapp: "https://www.whatsapp.com/channel/0029VbDDrqrAO7R9CGrXl908",
   earlyAccessMailto:
     "mailto:shane@cheripic.com?subject=CheriPic%20Early%20Access",
 };
