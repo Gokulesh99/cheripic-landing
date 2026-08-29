@@ -1,198 +1,118 @@
-# CheriPic Landing Page
+# CheriPic — Landing Page
 
-## Quick Overview
+React + Vite conversion of the finalized CheriPic landing page. Same visual
+design as the original single-file build, restructured into reusable
+components with a token-driven stylesheet and four responsive breakpoints.
 
-CheriPic is a premium landing page for a Relationship Intelligence platform focused on one idea:
-
-**Clarity before connection.**
-
-This site communicates the product story in a clean narrative flow, from identifying relationship patterns to taking intentional action through early access.
-
-### Highlights
-
-- Story-driven, single-page experience
-- Smooth reveal-on-scroll interactions
-- Strong visual identity with editorial typography
-- Mobile-responsive layout
-- Fast static deployment via Vite
-
-### Live Messaging Focus
-
-- Avoid repeating relationship patterns
-- Improve compatibility awareness
-- Use insight-led decisions before emotional attachment
-
-### Quick Start
+## Getting started
 
 ```bash
 npm install
-npm run dev
+npm run dev      # http://localhost:5173
+npm run build    # production bundle in dist/
+npm run preview  # serve the built bundle
 ```
 
-For full setup and developer documentation, continue below.
+## Project structure
 
----
-
-A premium, single-page marketing site for CheriPic, built with React + Vite.
-
-The page presents CheriPic as a Relationship Intelligence platform with a narrative flow from awareness to action:
-
-- Hero and value proposition
-- Relationship insights
-- Product pillars and journey
-- CheriAI feature highlights
-- Experience ecosystem preview
-- Audience fit and standards
-- Early-access and final call-to-action
-
-## Tech Stack
-
-- React 19
-- Vite 8
-- Plain CSS (single global stylesheet)
-- ESLint
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm 9+
-
-### Install
-
-```bash
-npm install
+```
+src/
+├── main.jsx                  entry point
+├── App.jsx                   hash router — picks the page for the route
+├── data/
+│   ├── content.js            ALL landing-page copy, links and list data
+│   └── legal.js              Master User Agreement clauses
+├── styles/
+│   ├── variables.css         design tokens (colour, type, spacing, motion)
+│   └── base.css              reset, typography, focus, reduced-motion
+├── hooks/
+│   ├── useScrollReveal.js    IntersectionObserver reveal-on-scroll
+│   ├── useScrolled.js        rAF-throttled scroll threshold
+│   ├── useLockBodyScroll.js  background scroll lock for the modal
+│   └── useHashRoute.js       tiny `#/route` reader (ignores plain anchors)
+├── utils/
+│   └── cx.js                 class-name joiner
+├── components/
+│   ├── ui/                   primitives — Button, Eyebrow, Icon, Logo,
+│   │                         Reveal, SectionHeading, VideoModal
+│   ├── layout/               shell — Container, Section, Header, Footer,
+│   │                         StickyCta
+│   └── sections/             page sections — Hero, VideoShowcase, Pain,
+│                             HowItWorks, Perks, CheriAi, FinalCta
+├── pages/
+│   ├── Home/                 landing page — section order lives here
+│   └── Legal/                Master User Agreement page + sticky contents
+└── assets/                   images, video posters
 ```
 
-### Run Development Server
+Every component folder holds `Component.jsx`, `Component.module.css` and an
+`index.js` barrel, so imports stay short: `import { Button } from '@components/ui'`.
 
-```bash
-npm run dev
-```
+## Path aliases
 
-Vite will print a local URL (typically `http://localhost:5173`).
+Configured in `vite.config.js`:
 
-### Build for Production
+| Alias | Resolves to |
+|---|---|
+| `@` | `src` |
+| `@components` | `src/components` |
+| `@hooks` | `src/hooks` |
+| `@pages` | `src/pages` |
+| `@data` | `src/data` |
+| `@styles` | `src/styles` |
 
-```bash
-npm run build
-```
+## Editing content
 
-### Preview Production Build
+Nothing is hard-coded in components. Headlines, bullet lists, CTA labels and
+URLs all live in `src/data/content.js`. Adding a perk is one object in the
+`perks.items` array; the grid picks it up automatically.
 
-```bash
-npm run preview
-```
+To enable the explainer video, set `video.src` in that same file to an MP4 or
+an embed URL — `VideoModal` detects which and renders `<video>` or `<iframe>`.
+Until then the poster opens a placeholder state rather than a dead link.
 
-### Lint
+## Routing
 
-```bash
-npm run lint
-```
+Routes live in the URL hash so the build stays a static bundle — no server
+rewrite rules, no router dependency. `useHashRoute` only treats a hash as a
+route when it starts with `#/`, so in-page anchors (`#top`, `#main`) still work.
 
-## Project Structure
+| Route | Page |
+|---|---|
+| `#/` or anything unmatched | `Home` |
+| `#/legal` | Master User Agreement, from the top |
+| `#/legal/<section-id>` | Agreement, scrolled to that clause |
+| `#/privacy`, `#/terms` | shortcuts into the same page |
 
-```text
-cheripic-landing/
-	public/
-		favicon.svg
-	src/
-		assets/               # image assets (logo, founder, experience visuals)
-		components/           # page sections + shared UI
-		data/
-			content.js          # central content/config source
-		hooks/
-			useScrolled.js      # navbar scroll state
-			useScrollReveal.js  # intersection-based reveal animation
-		styles/
-			global.css          # global styles and section styling
-		App.jsx               # page composition
-		main.jsx              # React entrypoint
-	index.html
-	vite.config.js
-	eslint.config.js
-```
+Clause ids come from `legal.js`: a section with `id: 'privacy'` is linkable as
+`#/legal/privacy`; unnamed ones fall back to `#/legal/s7` (the clause number).
 
-## How The Page Is Composed
+## Styling
 
-`App.jsx` renders sections in this order:
+Colours, type scale, spacing, radii and motion are CSS custom properties in
+`variables.css`. Components reference tokens only, never raw hex, so a palette
+change is a single-file edit. Component styles are CSS Modules, so class names
+are locally scoped and can't collide across sections.
 
-1. `Navbar`
-2. `Hero`
-3. `Insights`
-4. `NotADatingApp`
-5. `HowItWorks`
-6. `CheriAI`
-7. `Experiences`
-8. `WhoFor`
-9. `EarlyAccess`
-10. `Standard`
-11. `FinalCta`
-12. `Footer`
+## Responsive behaviour
 
-## Content Management
+Breakpoints: **1024px**, **860px**, **640px**, **480px**.
 
-Most editable text/content lives in `src/data/content.js`.
+- Fluid type via `clamp()` — headings and section padding scale continuously
+  between breakpoints instead of jumping.
+- Perks grid: 3 columns → 2 → 1. Pain list and trust checklist collapse to a
+  single column. How-it-works drops its connector line when stacked.
+- Video poster switches from 16:9 to 4:3 under 480px so the caption stays
+  readable, and its CTA goes full-width.
+- Sticky bottom CTA appears under 860px, respects `env(safe-area-inset-bottom)`,
+  and is removed from the tab order while hidden. The footer reserves space for it.
+- "Sign In" stays visible on mobile (the original hid it) so returning users
+  still have a way in.
 
-Update these exports to change page content without touching section components:
+## Accessibility
 
-- `INSIGHTS`
-- `PILLARS`
-- `STEPS`
-- `AI_FEATURES`
-- `EXPERIENCES`
-- `WHO_FOR`
-- `STANDARDS`
-- `LINKS` (Instagram, email, early-access mailto link)
-
-## Images and Assets
-
-Use one of these approaches consistently:
-
-1. Preferred for React components/data files: import from `src/assets`.
-2. Alternative: put files in `public` and reference with root paths (example: `/my-image.png`).
-
-Current implementation uses imported images in components like `Navbar`, `Hero`, and `Footer`.
-
-Important: file names are case-sensitive in many deployment environments. Keep import names and file names exactly matched.
-
-## Styling and Motion
-
-- All styling lives in `src/styles/global.css`.
-- Visual system is built with CSS variables in `:root`.
-- Section spacing utilities: `.sec`, `.sec-sm`.
-- Reveal effects are handled by `Reveal.jsx` + `useScrollReveal.js`.
-- Navbar background/compact transition is handled by `useScrolled.js`.
-
-Accessibility note: reveal animations respect `prefers-reduced-motion` and become static for users who disable motion.
-
-## Scripts Reference
-
-- `npm run dev` - start local development server
-- `npm run build` - create production bundle in `dist/`
-- `npm run preview` - preview production build locally
-- `npm run lint` - run ESLint checks
-
-## Deployment
-
-You can deploy the built `dist/` output to platforms like:
-
-- Vercel
-- Netlify
-- Cloudflare Pages
-- GitHub Pages (with appropriate Vite base-path configuration if needed)
-
-Recommended workflow:
-
-1. Run `npm run lint`
-2. Run `npm run build`
-3. Deploy `dist/`
-
-## Future Improvements
-
-- Add SEO and social metadata (Open Graph + Twitter tags)
-- Add a small CMS or JSON-driven admin flow for content editing
-- Add analytics/event tracking for CTA clicks
-- Add unit tests for hooks and smoke tests for rendering key sections
-
+- Skip link to `#main`.
+- The video poster is a real `<button>`, keyboard-operable with a visible focus ring.
+- The modal traps Escape, restores body scroll, and focuses its close button.
+- `prefers-reduced-motion` disables reveals, transitions and smooth scrolling.
+- Card groups are marked up as lists; the how-it-works steps as an ordered list.

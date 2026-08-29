@@ -1,14 +1,30 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-export default function useScrolled(threshold = 40) {
-  const [scrolled, setScrolled] = useState(false);
+/**
+ * True once the page has scrolled past `offset` pixels.
+ * Reads scroll position inside a rAF so the listener stays cheap.
+ */
+export function useScrolled(offset = 30) {
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > threshold);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [threshold]);
+    let frame = 0;
 
-  return scrolled;
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > offset);
+        frame = 0;
+      });
+    };
+
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [offset]);
+
+  return isScrolled;
 }

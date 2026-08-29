@@ -1,0 +1,30 @@
+.section {
+  position: relative;
+  z-index: 2;
+}
+
+.padded {
+  padding-block: var(--section-y);
+}
+
+.base {
+  background: var(--bg);
+}
+
+.soft {
+  background: var(--bg-soft);
+}
+
+.glow {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 30%, rgba(255, 77, 141, 0.26), transparent 65%),
+    radial-gradient(ellipse 60% 50% at 50% 60%, rgba(109, 40, 217, 0.35), transparent 65%),
+    var(--bg);
+  border-top: 1px solid var(--hairline);
+  text-align: center;
+}
+
+.bordered {
+  border-top: 1px solid var(--hairline);
+  border-bottom: 1px solid var(--hairline);
+}

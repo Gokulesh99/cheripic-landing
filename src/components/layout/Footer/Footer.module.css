@@ -1,0 +1,50 @@
+.footer {
+  padding-block: 36px;
+  border-top: 1px solid var(--hairline);
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--fs-xs);
+  color: var(--muted-dim);
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.links a {
+  color: var(--muted-dim);
+  transition: color var(--t-fast) var(--ease);
+}
+.links a:hover {
+  color: var(--lav-light);
+}
+
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* The mark carries WhatsApp's own green so it reads as the app, not a glyph. */
+.whatsappMark {
+  color: #25d366;
+  flex-shrink: 0;
+}
+
+/* Leave room for the sticky bar on touch layouts */
+@media (max-width: 860px) {
+  .footer {
+    padding-bottom: calc(96px + env(safe-area-inset-bottom));
+  }
+  .inner {
+    justify-content: center;
+    text-align: center;
+  }
+}

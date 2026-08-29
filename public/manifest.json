@@ -1,11 +1,11 @@
 {
-  "name": "CheriPic - Clarity Before Connection",
+  "name": "CheriPic — Find Someone Real",
   "short_name": "CheriPic",
-  "description": "The world's first Verified Relationship Intelligence Platform",
+  "description": "A free, verified space for people who are actually ready for a real relationship.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#09090b",
-  "theme_color": "#6c4fb0",
+  "background_color": "#0a0614",
+  "theme_color": "#6d28d9",
   "icons": [
     {
       "src": "/favicon.png",
@@ -15,7 +15,8 @@
     {
       "src": "/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

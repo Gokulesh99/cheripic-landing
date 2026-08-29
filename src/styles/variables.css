@@ -1,0 +1,74 @@
+/* ---------------------------------------------------------------
+   Design tokens — single source of truth for the CheriPic brand.
+   Change a value here and it propagates through every component.
+
+   Breakpoints used across the app (max-width overrides):
+   lg 1024px · md 860px · sm 640px · xs 480px
+----------------------------------------------------------------*/
+:root {
+  /* Surfaces */
+  --bg: #0a0614;
+  --bg-soft: #120a22;
+  --panel: #17102b;
+
+  /* Brand */
+  --lav-light: #c9a6f2;
+  --purple: #6d28d9;
+  --purple-deep: #2e1160;
+  --magenta: #e0257d;
+  --pink: #ff4d8d;
+  --peach: #ffb37a;
+  --green: #2ecc8f;
+
+  /* Text */
+  --white: #f7f3fc;
+  --muted: #a797c4;
+  --muted-dim: #6b5d8a;
+
+  /* Lines */
+  --card-border: rgba(185, 142, 240, 0.16);
+  --hairline: rgba(247, 243, 252, 0.08);
+
+  /* Gradients */
+  --grad-cta: linear-gradient(100deg, var(--magenta), var(--purple));
+  --grad-accent-text: linear-gradient(100deg, var(--peach), var(--pink) 55%, var(--lav-light));
+  --grad-node: linear-gradient(150deg, rgba(224, 37, 125, 0.14), rgba(109, 40, 217, 0.18));
+  --grad-icon: linear-gradient(150deg, rgba(255, 77, 141, 0.16), rgba(109, 40, 217, 0.22));
+
+  /* Type */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, sans-serif;
+
+  /* Fluid type scale */
+  --fs-h1: clamp(32px, 6vw, 56px);
+  --fs-h2: clamp(25px, 3.4vw, 36px);
+  --fs-h2-sm: clamp(24px, 3.4vw, 34px);
+  --fs-lead: clamp(16px, 1.9vw, 18.5px);
+  --fs-sm: 14.5px;
+  --fs-xs: 12.5px;
+
+  /* Spacing */
+  --gutter: clamp(18px, 4vw, 24px);
+  --maxw: 1120px;
+  --section-y: clamp(56px, 8vw, 88px);
+
+  /* Radii + shadows */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+  --shadow-cta: 0 12px 32px -10px rgba(224, 37, 125, 0.55);
+  --shadow-video: 0 40px 100px -35px rgba(224, 37, 125, 0.4);
+  --shadow-panel: 0 40px 100px -40px rgba(109, 40, 217, 0.5);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t-fast: 0.2s;
+  --t-base: 0.35s;
+  --t-slow: 0.7s;
+
+  /* Layers */
+  --z-header: 50;
+  --z-sticky: 60;
+  --z-modal: 100;
+}

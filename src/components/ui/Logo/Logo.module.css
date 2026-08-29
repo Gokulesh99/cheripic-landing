@@ -1,0 +1,7 @@
+/* Stacked lockup: sized by height, width follows the 3:2 artwork.
+   One clamp covers every breakpoint — 34px on phones up to 44px on desktop. */
+.logo {
+  height: clamp(34px, 4.4vw, 44px);
+  width: auto;
+  object-fit: contain;
+}

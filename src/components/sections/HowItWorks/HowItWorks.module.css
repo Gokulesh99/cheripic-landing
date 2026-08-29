@@ -1,0 +1,88 @@
+.path {
+  position: relative;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 960px;
+  margin-inline: auto;
+}
+
+/* Connector line between the three nodes */
+.path::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--magenta), var(--purple));
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+}
+
+.node {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  background: var(--grad-node);
+  border: 1px solid var(--card-border);
+  color: var(--lav-light);
+}
+
+.title {
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 9px;
+}
+
+.body {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  max-width: 250px;
+}
+
+@media (max-width: 1024px) {
+  .path {
+    gap: 24px;
+  }
+  .body {
+    max-width: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .path {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    max-width: 460px;
+  }
+  .path::before {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .path {
+    gap: 28px;
+  }
+  .node {
+    width: 52px;
+    height: 52px;
+    margin-bottom: 14px;
+  }
+  .title {
+    font-size: 19px;
+  }
+}

@@ -1,0 +1,16 @@
+.eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lav-light);
+}
+
+@media (max-width: 480px) {
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+  }
+}

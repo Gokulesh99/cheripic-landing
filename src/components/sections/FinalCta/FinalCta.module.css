@@ -1,0 +1,30 @@
+.title {
+  font-size: clamp(28px, 4.6vw, 46px);
+  max-width: 680px;
+  margin: 14px auto 16px;
+}
+
+.body {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 440px;
+  margin: 0 auto 36px;
+}
+
+.microcopy {
+  font-size: var(--fs-xs);
+  color: var(--muted-dim);
+  margin-top: 16px;
+}
+
+@media (max-width: 640px) {
+  .body {
+    margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    margin-bottom: 12px;
+  }
+}

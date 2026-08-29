@@ -1,0 +1,31 @@
+.bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-sticky);
+  display: none;
+  padding: 14px 20px calc(14px + env(safe-area-inset-bottom));
+  background: rgba(10, 6, 20, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--hairline);
+  transform: translateY(100%);
+  transition: transform var(--t-base) var(--ease);
+}
+
+.visible {
+  transform: translateY(0);
+}
+
+@media (max-width: 860px) {
+  .bar {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .bar {
+    padding-inline: 16px;
+  }
+}

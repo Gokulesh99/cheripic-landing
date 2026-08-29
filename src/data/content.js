@@ -1,64 +1,154 @@
+/* ---------------------------------------------------------------
+   All page copy lives here. Components stay presentational —
+   edit words in this file, never inside a component.
+----------------------------------------------------------------*/
 
-export const INSIGHTS = [
-  { num: "I.", text: "You ignore red flags because the connection feels strong." },
-  { num: "II.", text: "You mistake emotional intensity for compatibility." },
-  { num: "III.", text: "You repeat familiar patterns in different people." },
-];
+export const site = {
+  name: 'CheriPic',
+  joinUrl: 'http://app.cheripic.com',
+  signInUrl: 'http://app.cheripic.com',
+  whatsappNumber: '+971 52 758 5003',
+  privacyUrl: '#/legal/privacy',
+  termsUrl: '#/legal',
+  ctaLabel: 'Join Free — Find Your Person',
+  ctaMicrocopy: 'Free to join. No credit card required.',
+  legal: 'CheriPic — a division of Cave Xpert Inc. © 2026',
+};
 
-export const PILLARS = [
-  { k: "01 — Verify", title: "Verify", text: "Know who you are connecting with before things move forward." },
-  { k: "02 — Assess", title: "Assess", text: "Understand compatibility, values, emotional readiness, and relationship patterns." },
-  { k: "03 — Experience", title: "Experience", text: "Move beyond endless messaging into meaningful real-world experiences." },
-];
+export const hero = {
+  eyebrow: 'Relationship Readiness',
+  headlineLead: "You've swiped enough.",
+  headlineAccent: 'someone real.',
+  headlineJoin: "It's time to find",
+  sub: 'CheriPic is a free, verified space for people who are actually ready for a real relationship — not more wasted time, ghosting, or fake profiles.',
+};
 
-export const STEPS = [
-  { si: "i", title: "Build Your Relationship Profile", text: "Understand your patterns, values, goals, and emotional needs." },
-  { si: "ii", title: "Receive Intelligent Insights", text: "Gain deeper awareness before emotional attachment takes over." },
-  { si: "iii", title: "Connect With Intention", text: "Focus on quality over quantity." },
-  { si: "iv", title: "Create Meaningful Experiences", text: "Move from online connection into carefully selected real-world experiences." },
-];
+export const video = {
+  badge: 'Watch — 83 sec',
+  caption: '"Why good people keep ending up with the wrong ones."',
+  /** Drop an embed or MP4 URL here to enable the player. */
+  src: 'https://www.youtube.com/embed/UAx4HDNpJE4?rel=0&modestbranding=1',
+  trust: [
+    'Real, verified people',
+    'See their biodata first, not just a photo',
+    "Photos & names reveal only when you both show interest",
+    'No swiping — matches go straight to your inbox',
+    "Mutual interest required before anything's revealed",
+    'Free Relationship Readiness check included',
+  ],
+};
 
-export const AI_FEATURES = [
-  "Recognize patterns",
-  "Prepare for meaningful conversations",
-  "Identify misalignment earlier",
-  "Reflect before reacting",
-  "Build clarity before commitment",
-];
+export const pain = {
+  eyebrow: 'Sound familiar?',
+  title: "You're not the problem.",
+  items: [
+    "You've been hurt before — and you're not doing that again.",
+    "You've swiped for months and met no one real.",
+    "You don't have time to waste on people who aren't serious.",
+    "You want someone who's actually ready — not just available.",
+  ],
+  closer: [
+    'Most dating apps were never built for people who are ready for something real.',
+    'CheriPic was.',
+  ],
+};
 
-export const EXPERIENCES = [
-  "Restaurants",
-  "Coffee Lounges",
-  "Rooftop Venues",
-  "Hotels",
-  "Wellness Experiences",
-  "Travel Experiences",
-  "Activity Providers",
-  "Premium Experiences",
-];
+export const howItWorks = {
+  eyebrow: 'How CheriPic works',
+  title: 'Built to protect your time, your identity, and your heart.',
+  steps: [
+    {
+      id: 'verified',
+      icon: 'shieldCheck',
+      title: 'Verified',
+      body: 'Every profile is checked. Real people only — no fakes, no bots, no catfish.',
+    },
+    {
+      id: 'readiness',
+      icon: 'checkCircle',
+      title: 'Readiness Check',
+      body: 'A short, free assessment shows where you stand — and matches you with people just as ready as you.',
+    },
+    {
+      id: 'connections',
+      icon: 'chat',
+      title: 'Real Connections',
+      body: 'Meet people who actually want the same thing you do. No more dead-end chats.',
+    },
+  ],
+};
 
-export const WHO_FOR = [
-  "People who are tired of repeating the same pattern.",
-  "People who value emotional intelligence.",
-  "People who want clarity before commitment.",
-  "People who are done with mixed signals.",
-  "People who want meaningful experiences.",
-  "People who want better decisions, not just more options.",
-];
+export const perks = {
+  eyebrow: 'More Than a Dating App',
+  title: "Here's what you're actually getting.",
+  items: [
+    {
+      id: 'no-swiping',
+      icon: 'inbox',
+      title: 'No Swiping',
+      body: 'Every match goes straight to your inbox. No endless scrolling, no games.',
+    },
+    {
+      id: 'verified-only',
+      icon: 'shield',
+      title: 'Verified People Only',
+      body: 'Real identities, checked before they ever reach you. No fakes, no bots.',
+    },
+    {
+      id: 'privacy',
+      icon: 'lock',
+      title: 'Your Privacy, Protected',
+      body: 'Your identity stays private until you decide to share it — always your call.',
+    },
+    {
+      id: 'readiness',
+      icon: 'checkCircle',
+      title: 'Free Readiness Check',
+      body: 'A short assessment matches you with people on your same level.',
+    },
+    {
+      id: 'cheriai',
+      icon: 'sparkle',
+      title: 'CheriAI, Anytime',
+      body: 'A relationship and mindset coach, awake whenever you need her.',
+    },
+    {
+      id: 'partners',
+      icon: 'building',
+      title: 'Global Partner Access',
+      body: 'Exclusive perks at partner restaurants, hotels, and curated experiences — just for members.',
+      highlight: true,
+    },
+  ],
+};
 
-export const STANDARDS = [
-  { mk: "i", title: "Verified Connection" },
-  { mk: "ii", title: "Emotional Intelligence" },
-  { mk: "iii", title: "Meaningful Experiences" },
-  { mk: "iv", title: "Better Decisions" },
-];
+export const cheriAi = {
+  eyebrow: 'Meet CheriAI',
+  title: 'Your relationship coach — awake when you need her most.',
+  body: [
+    'CheriAI is there for the 1am questions. Real advice on relationships, mindset, and self-development — whenever you need it, judgment-free.',
+    "Ask her anything. She'll help you find clarity, and point you toward the right next step.",
+  ],
+  panelLabel: 'CheriAI · Always here',
+  conversation: [
+    {
+      id: 'q1',
+      from: 'user',
+      text: 'How do I tell him I need more consistency without sounding needy?',
+    },
+    {
+      id: 'a1',
+      from: 'ai',
+      tag: 'CheriAI',
+      text: 'Lead with what you want, not what\u2019s wrong: "I feel closest to you when we talk daily — can we aim for that?" Direct, not needy.',
+    },
+  ],
+  footnote: 'Available anytime. Judgment-free.',
+};
 
-export const LINKS = {
-  instagram: "https://instagram.com/cheripic_official",
-  email: "shane@cheripic.com",
-  supportEmail: "support@cheripic.com",
-  twitter: "https://x.com/ShaneGoodgie",
-  whatsapp: "https://www.whatsapp.com/channel/0029VbDDrqrAO7R9CGrXl908",
-  earlyAccessMailto:
-    "mailto:shane@cheripic.com?subject=CheriPic%20Early%20Access",
+export const finalCta = {
+  eyebrow: 'Start free',
+  title: 'Stop wasting time. Start finding someone real.',
+  body: 'Free to join. Verified. Built to protect you — not waste your time.',
+  microcopy: 'No credit card required.',
 };

@@ -1,71 +1,85 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0A0614" />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#09090b" />
-  <link rel="manifest" href="/manifest.json" />
-  
-  <title>CheriPic — Clarity Before Connection</title>
-  <meta name="description"
-    content="CheriPic is the world's first Verified Relationship Intelligence Platform — build clarity and recognize patterns before connection." />
-  <link rel="canonical" href="https://cheripic.com/" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
 
-  <!-- Open Graph (Facebook, LinkedIn, Discord, WhatsApp, etc.) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="CheriPic" />
-  <meta property="og:url" content="https://cheripic.com/" />
-  <meta property="og:title" content="CheriPic — Clarity Before Connection" />
-  <meta property="og:description"
-    content="Recognize patterns, understand compatibility, and build clarity before emotional connection takes over." />
-  <meta property="og:image" content="https://cheripic.com/og-image.png" />
-  <meta property="og:image:secure_url" content="https://cheripic.com/og-image.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="CheriPic — Clarity Before Connection" />
+    <title>CheriPic — Find Someone Real</title>
+    <meta
+      name="description"
+      content="CheriPic is a free, verified dating platform built for people who are actually ready for a real relationship. Verified profiles. No endless swiping. Join free."
+    />
+    <link rel="canonical" href="https://cheripic.com/" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
 
-  <!-- X (Twitter) Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="CheriPic — Clarity Before Connection" />
-  <meta name="twitter:description"
-    content="Recognize patterns, understand compatibility, and build clarity before emotional connection takes over." />
-  <meta name="twitter:image" content="https://cheripic.com/og-image.png" />
-  <meta name="twitter:image:alt" content="CheriPic — Clarity Before Connection" />
+    <!-- Open Graph (Facebook, LinkedIn, Discord, WhatsApp, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CheriPic" />
+    <meta property="og:url" content="https://cheripic.com/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="CheriPic — Find Someone Real" />
+    <meta
+      property="og:description"
+      content="A free, verified space for people who are actually ready for a real relationship — not more wasted time, ghosting, or fake profiles."
+    />
+    <meta property="og:image" content="https://cheripic.com/og-image.png" />
+    <meta property="og:image:secure_url" content="https://cheripic.com/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CheriPic — Find Someone Real" />
 
-  <!-- Resource hints -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  
-  <!-- Preload critical assets -->
-  <link rel="modulepreload" href="/src/main.jsx" />
-  <!-- Preload the LCP hero image so it downloads in parallel with the JS bundle -->
-  <link rel="preload" as="image" href="/founder.webp" fetchpriority="high" />
-  
-  <!-- Optimized font loading with font-display: swap -->
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript>
-    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" />
-  </noscript>
-  
-  <!-- Inline critical CSS hint -->
-  <style>
-    body { margin: 0; background: #09090b; }
-    #root { min-height: 100vh; }
-  </style>
-</head>
+    <!-- X (Twitter) Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CheriPic — Find Someone Real" />
+    <meta
+      name="twitter:description"
+      content="A free, verified space for people who are actually ready for a real relationship — not more wasted time, ghosting, or fake profiles."
+    />
+    <meta name="twitter:image" content="https://cheripic.com/og-image.png" />
+    <meta name="twitter:image:alt" content="CheriPic — Find Someone Real" />
 
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
+    <!-- Video player warms up on idle; get the handshakes out of the way early. -->
+    <link rel="preconnect" href="https://www.youtube.com" />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+    <link rel="dns-prefetch" href="https://googlevideo.com" />
 
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Paint the brand ground before the bundle lands, so there's no white flash. -->
+    <style>
+      body { margin: 0; background: #0a0614; }
+      #root { min-height: 100vh; }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "CheriPic",
+        "url": "https://cheripic.com/",
+        "logo": "https://cheripic.com/apple-touch-icon.png",
+        "description": "A free, verified dating platform for people who are actually ready for a real relationship.",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Cave Xpert Inc."
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

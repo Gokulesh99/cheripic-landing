@@ -1,0 +1,49 @@
+.hero {
+  position: relative;
+  z-index: 2;
+  padding-top: clamp(96px, 14vw, 112px);
+  padding-bottom: 30px;
+  background:
+    radial-gradient(ellipse 80% 55% at 50% -20%, rgba(109, 40, 217, 0.5), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 90% 0%, rgba(255, 77, 141, 0.16), transparent 60%),
+    var(--bg);
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin-bottom: 18px;
+}
+
+.title {
+  font-size: var(--fs-h1);
+  color: var(--white);
+  margin-bottom: 18px;
+}
+
+.accent {
+  background: var(--grad-accent-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sub {
+  font-size: var(--fs-lead);
+  color: var(--muted);
+  max-width: 520px;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-bottom: 22px;
+  }
+  /* Let the headline wrap naturally instead of forcing a break */
+  .title br {
+    display: none;
+  }
+}

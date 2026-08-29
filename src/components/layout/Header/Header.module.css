@@ -1,0 +1,62 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  padding-block: 14px;
+  border-bottom: 1px solid transparent;
+  transition:
+    background var(--t-base) var(--ease),
+    border-color var(--t-base) var(--ease),
+    padding var(--t-base) var(--ease);
+}
+
+.scrolled {
+  background: rgba(10, 6, 20, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom-color: var(--hairline);
+  padding-block: 11px;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: inline-flex;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.signIn {
+  font-size: 14px;
+  color: var(--muted);
+  transition: color var(--t-fast) var(--ease);
+}
+.signIn:hover {
+  color: var(--white);
+}
+
+@media (max-width: 860px) {
+  .nav {
+    gap: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    padding-block: 12px;
+  }
+  .signIn {
+    font-size: 13px;
+  }
+}
