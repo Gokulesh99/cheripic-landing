@@ -12,7 +12,7 @@ export default function Hero() {
           <h1 className={styles.title}>
             {hero.headlineLead}
             <br />
-            {hero.headlineJoin} <span className={styles.accent}>{hero.headlineAccent}</span>
+             {hero.headlineJoin} <span className={styles.accent}>{hero.headlineAccent}</span>
           </h1>
           <p className={styles.sub}>{hero.sub}</p>
         </div>

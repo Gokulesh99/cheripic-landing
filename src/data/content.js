@@ -19,8 +19,8 @@ export const hero = {
   eyebrow: 'Relationship Readiness',
   headlineLead: "You've swiped enough.",
   headlineAccent: 'someone real.',
-  headlineJoin: "It's time to find",
-  sub: 'CheriPic is a free, verified space for people who are actually ready for a real relationship — not more wasted time, ghosting, or fake profiles.',
+  headlineJoin: " It's time to find",
+  sub: 'CheriPic is a freemium, verified space for people who are actually ready for a real relationship — not more wasted time, ghosting, or fake profiles.',
 };
 
 export const video = {
@@ -48,8 +48,7 @@ export const pain = {
     "You want someone who's actually ready — not just available.",
   ],
   closer: [
-    'Most dating apps were never built for people who are ready for something real.',
-    'CheriPic was.',
+    'Most dating apps were never built for people who are ready for something real. CheriPic was.' ,
   ],
 };
 
