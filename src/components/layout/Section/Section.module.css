@@ -1,6 +1,11 @@
 .section {
   position: relative;
   z-index: 2;
+  /* Skip rendering work for sections still off-screen; the reserved size keeps
+     the scrollbar stable so this costs no layout shift. Hero and the video sit
+     above the fold and use their own wrappers, so they're unaffected. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
 }
 
 .padded {
