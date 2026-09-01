@@ -125,7 +125,7 @@ export const cheriAi = {
   eyebrow: 'Meet CheriAI',
   title: 'Your relationship coach — awake when you need her most.',
   body: [
-    'CheriAI is there for the 1am questions. Real advice on relationships, mindset, and self-development — whenever you need it, judgment-free.',
+    'CheriAI is there for the 1 am questions. Real advice on relationships, mindset, and self-development — whenever you need it, judgment-free.',
     "Ask her anything. She'll help you find clarity, and point you toward the right next step.",
   ],
   panelLabel: 'CheriAI · Always here',
