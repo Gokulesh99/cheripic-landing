@@ -1,4 +1,4 @@
-import { Button } from '@components/ui';
+import { JoinButton } from '@components/ui';
 import { useScrolled } from '@hooks/useScrolled';
 import { site } from '@data/content';
 import { cx } from '@/utils/cx';
@@ -13,9 +13,9 @@ export default function StickyCta({ showAfter = 620 }) {
 
   return (
     <div className={cx(styles.bar, isVisible && styles.visible)} aria-hidden={!isVisible}>
-      <Button href={site.joinUrl} fullWidth tabIndex={isVisible ? 0 : -1}>
+      <JoinButton fullWidth tabIndex={isVisible ? 0 : -1}>
         {site.ctaLabel}
-      </Button>
+      </JoinButton>
     </div>
   );
 }

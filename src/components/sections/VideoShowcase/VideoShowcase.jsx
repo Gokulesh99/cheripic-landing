@@ -1,5 +1,5 @@
 import { Container } from '@components/layout';
-import { Button, Reveal } from '@components/ui';
+import { JoinButton, Reveal } from '@components/ui';
 import { site, video } from '@data/content';
 import VideoPlayer from './VideoPlayer';
 import TrustList from './TrustList';
@@ -20,9 +20,7 @@ export default function VideoShowcase() {
           <p className={styles.caption}>{video.caption}</p>
 
           <div className={styles.ctaRow}>
-            <Button href={site.joinUrl} size="lg">
-              {site.ctaLabel}
-            </Button>
+            <JoinButton size="lg">{site.ctaLabel}</JoinButton>
             <span className={styles.microcopy}>{site.ctaMicrocopy}</span>
           </div>
 

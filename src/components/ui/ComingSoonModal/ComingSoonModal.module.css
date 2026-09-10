@@ -1,0 +1,184 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--gutter);
+  background: rgba(10, 6, 20, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: fade var(--t-fast) var(--ease) both;
+  overflow-y: auto;
+}
+
+.card {
+  position: relative;
+  width: min(460px, 100%);
+  margin: auto;
+  padding: 40px 32px 36px;
+  text-align: center;
+  border-radius: var(--r-lg);
+  background: var(--panel);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-panel);
+  overflow: hidden;
+  animation: rise var(--t-base) var(--ease) both;
+}
+
+/* Soft brand glow bleeding in from the top of the card. */
+.halo {
+  position: absolute;
+  top: -140px;
+  left: 50%;
+  width: 320px;
+  height: 260px;
+  transform: translateX(-50%);
+  background: var(--grad-node);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--r-pill);
+  background: rgba(247, 243, 252, 0.06);
+  border: 1px solid var(--hairline);
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    background var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease);
+}
+.close:hover {
+  background: rgba(247, 243, 252, 0.14);
+  color: var(--white);
+}
+
+.logo {
+  position: relative;
+  height: 54px;
+  width: auto;
+  margin: 0 auto 18px;
+}
+
+.eyebrow {
+  position: relative;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lav-light);
+}
+
+.title {
+  position: relative;
+  margin-top: 10px;
+  font-size: var(--fs-h2-sm);
+}
+
+.accent {
+  font-style: italic;
+  background: var(--grad-accent-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.rule {
+  display: block;
+  width: 56px;
+  height: 1px;
+  margin: 20px auto;
+  background: linear-gradient(90deg, transparent, var(--lav-light), transparent);
+  opacity: 0.6;
+}
+
+.text {
+  position: relative;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* Label and link sit on one centred line and share the same type. */
+.contactRow {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+}
+
+.contact {
+  color: var(--muted);
+}
+
+.email {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--pink);
+  transition: color var(--t-fast) var(--ease);
+}
+.email:hover {
+  color: var(--peach);
+}
+
+/* Same accent treatment as the headline: muted lead, gradient call-out. */
+.whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 700;
+  transition: filter var(--t-fast) var(--ease);
+}
+.whatsapp:hover {
+  filter: brightness(1.12);
+}
+
+/* Gradient text can't tint the glyph, so the mark takes the gradient's
+   mid stop — the icon and the label read as one accent. */
+.whatsappMark {
+  color: var(--pink);
+  flex-shrink: 0;
+}
+
+.whatsappLabel {
+  background: var(--grad-accent-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.98);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 34px 22px 30px;
+  }
+}

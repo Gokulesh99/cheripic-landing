@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from 'react';
 // Import above-the-fold pieces directly (not via the barrels) so the barrels
 // don't statically pull every section/layout module into the main chunk and
 // defeat the lazy splits below.
+import { ComingSoonProvider } from '@components/ui/ComingSoonModal';
 import Header from '@components/layout/Header';
 import StickyCta from '@components/layout/StickyCta';
 import Footer from '@components/layout/Footer';
@@ -24,7 +25,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <ComingSoonProvider>
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -45,6 +46,6 @@ export default function Home() {
 
       <Footer />
       <StickyCta />
-    </>
+    </ComingSoonProvider>
   );
 }

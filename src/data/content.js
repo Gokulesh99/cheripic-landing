@@ -8,11 +8,21 @@ export const site = {
   joinUrl: 'http://app.cheripic.com',
   signInUrl: 'http://app.cheripic.com',
   whatsappNumber: '+971 52 758 5003',
+  supportEmail: 'hello@cheripic.com',
   privacyUrl: '#/legal/privacy',
   termsUrl: '#/legal',
   ctaLabel: 'Join Free — Find Your Person',
   ctaMicrocopy: 'Free to join. No credit card required.',
   legal: 'CheriPic — a division of Cave Xpert Inc. © 2026',
+};
+
+/** Copy for the pre-launch overlay every Join CTA opens. */
+export const comingSoon = {
+  eyebrow: 'Coming Soon',
+  titleLead: 'Something Rare Is',
+  titleAccent: 'Taking Shape.',
+  body: 'We are building CheriPic with the care this deserves. Early access opens shortly — you will be among the first to know.',
+  contact: 'For any enquiries',
 };
 
 export const hero = {

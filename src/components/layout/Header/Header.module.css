@@ -37,9 +37,12 @@
   gap: 26px;
 }
 
+/* Renders as a <button> while the app is pre-launch, so it needs the
+   pointer an <a> would have given it. */
 .signIn {
   font-size: 14px;
   color: var(--muted);
+  cursor: pointer;
   transition: color var(--t-fast) var(--ease);
 }
 .signIn:hover {
