@@ -121,7 +121,9 @@
 }
 
 @media (max-width: 480px) {
-  .ctaRow > a {
+  /* The CTA renders as <button> pre-launch and <a> after — match both. */
+  .ctaRow > a,
+  .ctaRow > button {
     width: 100%;
   }
   .microcopy {
