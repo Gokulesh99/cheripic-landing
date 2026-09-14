@@ -1,7 +1,7 @@
 {
   "name": "CheriPic — Find Someone Real",
   "short_name": "CheriPic",
-  "description": "A free, verified space for people who are actually ready for a real relationship.",
+  "description": "A freemium, verified space for people who are actually ready for a real relationship.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0614",
