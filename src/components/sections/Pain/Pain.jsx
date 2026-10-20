@@ -1,24 +1,31 @@
 import { Section } from '@components/layout';
-import { Reveal, SectionHeading } from '@components/ui';
-import { pain } from '@data/content';
+import { JoinButton, Reveal, SectionHeading } from '@components/ui';
+import { pain, site } from '@data/content';
 import PainItem from './PainItem';
 import styles from './Pain.module.css';
 
 export default function Pain() {
   return (
     <Section tone="base">
-      <SectionHeading eyebrow={pain.eyebrow} title={pain.title} size="sm" width="600px" />
+      <SectionHeading
+        eyebrow={pain.eyebrow}
+        title={pain.title}
+        titleAccent={pain.titleAccent}
+        size="sm"
+        width="640px"
+      />
 
       <ul className={styles.list}>
-        {pain.items.map((text, index) => (
-          <PainItem key={text} text={text} delay={index * 70} />
+        {pain.items.map((item, index) => (
+          <PainItem key={item.id} {...item} delay={index * 70} />
         ))}
       </ul>
 
-      <Reveal as="p" className={styles.closer}>
-        {pain.closer[0]}
-        <br />
-        {pain.closer[1]}
+      <Reveal className={styles.closerBlock}>
+        <p className={styles.closerLead}>{pain.closerLead}</p>
+        <p className={styles.closer}>{pain.closer}</p>
+        <JoinButton size="sm">{pain.ctaLabel}</JoinButton>
+        <p className={styles.microcopy}>{site.ctaMicrocopy}</p>
       </Reveal>
     </Section>
   );

@@ -70,8 +70,11 @@
 }
 
 @media (max-width: 480px) {
+  /* Long CTA labels wrap inside the pill rather than overflowing it. */
   .lg,
   .md {
     padding-inline: 22px;
+    white-space: normal;
+    line-height: 1.25;
   }
 }

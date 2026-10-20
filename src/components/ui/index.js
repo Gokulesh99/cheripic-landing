@@ -5,5 +5,6 @@ export { default as Icon } from './Icon';
 export { default as JoinButton } from './JoinButton';
 export { default as Logo } from './Logo';
 export { default as Reveal } from './Reveal';
+export { default as Rich } from './Rich';
 export { default as SectionHeading } from './SectionHeading';
 export { default as VideoModal } from './VideoModal';

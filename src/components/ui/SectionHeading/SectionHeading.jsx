@@ -10,6 +10,7 @@ import styles from './SectionHeading.module.css';
 export default function SectionHeading({
   eyebrow,
   title,
+  titleAccent,
   align = 'center',
   size = 'lg',
   width,
@@ -22,7 +23,14 @@ export default function SectionHeading({
       style={width ? { maxWidth: width } : undefined}
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      {title && <h2 className={styles.title}>{title}</h2>}
+      {(title || titleAccent) && (
+        <h2 className={styles.title}>
+          {title}
+          {/* The space survives when the break is dropped on narrow screens. */}
+          {title && titleAccent && <> <br /></>}
+          {titleAccent && <span className={styles.accent}>{titleAccent}</span>}
+        </h2>
+      )}
       {children}
     </Reveal>
   );

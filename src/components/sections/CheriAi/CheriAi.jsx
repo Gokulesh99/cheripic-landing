@@ -1,5 +1,5 @@
 import { Section } from '@components/layout';
-import { Eyebrow, Reveal } from '@components/ui';
+import { Eyebrow, JoinButton, Reveal, Rich } from '@components/ui';
 import { cheriAi } from '@data/content';
 import ChatBubble from './ChatBubble';
 import styles from './CheriAi.module.css';
@@ -10,12 +10,22 @@ export default function CheriAi() {
       <div className={styles.grid}>
         <Reveal className={styles.copy}>
           <Eyebrow>{cheriAi.eyebrow}</Eyebrow>
-          <h2 className={styles.title}>{cheriAi.title}</h2>
+          <h2 className={styles.title}>
+            {cheriAi.title} <span className={styles.accent}>{cheriAi.titleAccent}</span>
+          </h2>
           {cheriAi.body.map((paragraph) => (
             <p key={paragraph} className={styles.paragraph}>
-              {paragraph}
+              <Rich text={paragraph} />
             </p>
           ))}
+
+          <ul className={styles.pillars}>
+            {cheriAi.pillars.map((pillar) => (
+              <li key={pillar.id} className={styles.pillar}>
+                <span className={styles.pillarLead}>{pillar.lead}</span> {pillar.trail}
+              </li>
+            ))}
+          </ul>
         </Reveal>
 
         <Reveal className={styles.panel} delay={80}>
@@ -29,6 +39,10 @@ export default function CheriAi() {
           ))}
 
           <p className={styles.footnote}>{cheriAi.footnote}</p>
+
+          {/* <JoinButton size="lg" fullWidth>
+            {cheriAi.ctaLabel}
+          </JoinButton> */}
         </Reveal>
       </div>
     </Section>

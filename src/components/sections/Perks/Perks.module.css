@@ -1,22 +1,37 @@
+.eyebrowAccent {
+  color: var(--pink);
+}
+
+.intro {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-top: 14px;
+}
+
 .grid {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  max-width: 1040px;
+  max-width: 980px;
   margin-inline: auto;
 }
 
 .card {
   background: var(--panel);
   border: 1px solid var(--card-border);
+  border-left: 2px solid var(--pink);
   border-radius: var(--r-md);
   padding: 24px 22px;
 }
 
+/* Global Partner Access runs the full width of the grid. */
 .highlight {
+  grid-column: 1 / -1;
   background: linear-gradient(160deg, rgba(255, 77, 141, 0.1), rgba(109, 40, 217, 0.14));
   border-color: rgba(255, 77, 141, 0.28);
+  border-left-color: var(--pink);
 }
 
 .icon {
@@ -32,32 +47,48 @@
 }
 
 .title {
-  font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 600;
-  letter-spacing: -0.005em;
+  line-height: 1.25;
   color: var(--white);
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .body {
-  font-size: 13.5px;
+  font-size: var(--fs-sm);
   line-height: 1.55;
   color: var(--muted);
 }
 
-@media (max-width: 1024px) {
+.highlight .title {
+  font-size: 26px;
+}
+
+.highlight .body {
+  font-size: 15.5px;
+}
+
+.ctaBlock {
+  text-align: center;
+  margin-top: clamp(32px, 4.5vw, 44px);
+}
+
+.microcopy {
+  font-size: var(--fs-xs);
+  color: var(--muted-dim);
+  margin-top: 16px;
+}
+
+@media (max-width: 860px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 720px;
+    grid-template-columns: 1fr;
+    max-width: 560px;
   }
 }
 
 @media (max-width: 640px) {
   .grid {
-    grid-template-columns: 1fr;
     gap: 14px;
-    max-width: 460px;
   }
   .card {
     padding: 20px 18px;
@@ -66,5 +97,20 @@
     width: 38px;
     height: 38px;
     margin-bottom: 12px;
+  }
+  .title,
+  .highlight .title {
+    font-size: 20px;
+  }
+  .highlight .body {
+    font-size: var(--fs-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  /* The CTA renders as <button> pre-launch and <a> after — match both. */
+  .ctaBlock > a,
+  .ctaBlock > button {
+    width: 100%;
   }
 }

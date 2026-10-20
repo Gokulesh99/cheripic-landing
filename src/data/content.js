@@ -11,7 +11,7 @@ export const site = {
   supportEmail: 'hello@cheripic.com',
   privacyUrl: '#/legal/privacy',
   termsUrl: '#/legal',
-  ctaLabel: 'Join Free — Find Your Person',
+  ctaLabel: 'Join Free — Start Your Journey Today',
   ctaMicrocopy: 'Free to join. No credit card required.',
   legal: 'CheriPic — a division of Cave Xpert Inc. © 2026',
 };
@@ -26,11 +26,28 @@ export const comingSoon = {
 };
 
 export const hero = {
-  eyebrow: 'Relationship Readiness',
-  headlineLead: "You've swiped enough.",
-  headlineAccent: 'someone real.',
-  headlineJoin: " It's time to find",
-  sub: 'CheriPic is a freemium, verified space for people who are actually ready for a real relationship — not more wasted time, ghosting, or fake profiles.',
+  eyebrow: 'Relationship Intelligence',
+  headlineLead: 'Tired of the same',
+  headlineAccent: ' relationship patterns?',
+  subheadLead: "It's time to build",
+  subheadAccent: 'Relationship Intelligence.',
+  sub: 'CheriPic is a freemium, verified space for people who want to understand themselves, break unhealthy patterns, and build the skills to create healthy, lasting relationships.',
+  cards: [
+    {
+      id: 'what-is-ri',
+      icon: 'bulb',
+      title: 'What is Relationship Intelligence?',
+      body: 'Relationship Intelligence is the self-awareness, emotional skills, and practical knowledge that help you make healthier choices, communicate better, and build stronger, lasting relationships.',
+    },
+    {
+      id: 'not-a-dating-app',
+      icon: 'prohibited',
+      titleLead: 'We are',
+      titleAccent: 'NOT',
+      titleTrail: 'a dating platform.',
+      body: 'CheriPic focuses on your growth, readiness and real connection — not casual swiping or short-term chats.',
+    },
+  ],
 };
 
 export const video = {
@@ -38,28 +55,75 @@ export const video = {
   caption: '"Why good people keep ending up with the wrong ones."',
   /** Drop an embed or MP4 URL here to enable the player. */
   src: 'https://www.youtube.com/embed/UAx4HDNpJE4?rel=0&modestbranding=1',
+  ctaLabel: 'Join Free — Build Your Relationship Intelligence',
   trust: [
-    'Real, verified people',
-    'See their biodata first, not just a photo',
-    "Photos & names reveal only when you both show interest",
-    'No swiping — matches go straight to your inbox',
-    "Mutual interest required before anything's revealed",
-    'Free Relationship Readiness check included',
+    {
+      id: 'patterns',
+      title: 'Understand Your Patterns',
+      body: 'Discover why the same challenges keep showing up and how to break them.',
+    },
+    {
+      id: 'red-flags',
+      title: 'Recognize Red Flags Earlier',
+      body: 'Learn to identify unhealthy behaviours before you invest emotionally.',
+    },
+    {
+      id: 'communication',
+      title: 'Improve Communication',
+      body: 'Gain tools to have healthier conversations and resolve recurring conflicts.',
+    },
+    {
+      id: 'strengthen',
+      title: 'Strengthen Your Current Relationship',
+      body: 'Rebuild trust, deepen emotional connection, and grow together.',
+    },
+    {
+      id: 'ai-guidance',
+      title: 'Get Personalized AI Guidance',
+      body: 'CheriAI helps you reflect, grow, and make wiser relationship decisions.',
+    },
+    {
+      id: 'verified',
+      title: 'Connect with Verified, Serious-Minded People',
+      body: 'A safe, premium space for people who value long-term commitment, such as marriage.',
+    },
+    {
+      id: 'readiness',
+      title: 'Build Relationship Readiness',
+      body: 'Take a free assessment to understand where you are and how to grow.',
+    },
   ],
 };
 
 export const pain = {
-  eyebrow: 'Sound familiar?',
+  eyebrow: "You're not alone",
   title: "You're not the problem.",
+  titleAccent: 'You just need deeper understanding.',
+  ctaLabel: 'Join Free — Build Your Relationship Intelligence',
   items: [
-    "You've been hurt before — and you're not doing that again.",
-    "You've swiped for months and met no one real.",
-    "You don't have time to waste on people who aren't serious.",
-    "You want someone who's actually ready — not just available.",
+    {
+      id: 'patterns',
+      title: 'You keep experiencing the same painful patterns',
+      body: 'Different people, similar outcomes. You start hopeful, but end up feeling disappointed, confused, or hurt again.',
+    },
+    {
+      id: 'conflict',
+      title: 'You struggle to communicate without conflict',
+      body: 'Conversations turn into misunderstandings, and you feel unheard, frustrated, or emotionally disconnected.',
+    },
+    {
+      id: 'decisions',
+      title: "You're unsure if you're making the right decisions",
+      body: "You worry about red flags, emotional unavailability, or investing in someone who isn't truly aligned with your values and future goals.",
+    },
+    {
+      id: 'stronger',
+      title: 'You want a stronger, more fulfilling relationship',
+      body: "Whether you're single, getting to know someone, or married, you want clarity, deeper connection, and a future built on trust, respect and shared commitment.",
+    },
   ],
-  closer: [
-    'Most dating apps were never built for people who are ready for something real. CheriPic was.' ,
-  ],
+  closerLead: "You're not alone.",
+  closer: "Better relationships start with understanding — and that's what CheriPic is here for.",
 };
 
 export const howItWorks = {
@@ -88,68 +152,83 @@ export const howItWorks = {
 };
 
 export const perks = {
-  eyebrow: 'More Than a Dating App',
-  title: "Here's what you're actually getting.",
+  eyebrowLead: "We're",
+  eyebrowAccent: 'NOT',
+  eyebrowTrail: 'a dating app',
+  title: "Here's what you're",
+  titleAccent: 'actually getting.',
+  intro:
+    'Real people. Real insights. Real support — to help you build stronger, healthier relationships in every area of your life.',
+  ctaLabel: 'Join Free — Start Your Journey Today',
   items: [
     {
-      id: 'no-swiping',
-      icon: 'inbox',
-      title: 'No Swiping',
-      body: 'Every match goes straight to your inbox. No endless scrolling, no games.',
+      id: 'community',
+      icon: 'users',
+      title: 'A Safe & Genuine Community',
+      body: 'Connect with real, verified people who value meaningful conversations, emotional growth, and healthier relationships. No fakes, no bots, no games.',
     },
     {
-      id: 'verified-only',
-      icon: 'shield',
-      title: 'Verified People Only',
-      body: 'Real identities, checked before they ever reach you. No fakes, no bots.',
+      id: 'patterns',
+      icon: 'chart',
+      title: 'Understand Yourself. Break the Patterns.',
+      body: 'Gain personalized insights into your relationship patterns, communication style, emotional triggers, and strengths — so you can make better choices and build more fulfilling relationships.',
+    },
+    {
+      id: 'guidance',
+      icon: 'sparkle',
+      title: 'Practical Guidance, Anytime',
+      body: 'Get expert-backed tools, exercises, and AI-powered guidance to navigate real-life relationship challenges, improve communication, and grow with confidence. CheriAI is here whenever you need support.',
+    },
+    {
+      id: 'every-stage',
+      icon: 'heart',
+      title: 'Support for Every Stage',
+      body: "Whether you're single, getting to know someone, in a relationship, married, or simply want to strengthen your relationships with the people in your life — CheriPic provides relevant insights and resources for your unique journey.",
     },
     {
       id: 'privacy',
       icon: 'lock',
-      title: 'Your Privacy, Protected',
-      body: 'Your identity stays private until you decide to share it — always your call.',
-    },
-    {
-      id: 'readiness',
-      icon: 'checkCircle',
-      title: 'Free Readiness Check',
-      body: 'A short assessment matches you with people on your same level.',
-    },
-    {
-      id: 'cheriai',
-      icon: 'sparkle',
-      title: 'CheriAI, Anytime',
-      body: 'A relationship and mindset coach, awake whenever you need her.',
+      title: 'Your Privacy, Always Protected',
+      body: "Your information stays private and secure. You're always in control of what you share, and who sees it.",
     },
     {
       id: 'partners',
       icon: 'building',
       title: 'Global Partner Access',
-      body: 'Exclusive perks at partner restaurants, hotels, and curated experiences — just for members.',
-      highlight: true,
+      body: "Enjoy exclusive perks at partner restaurants, hotels, and curated experiences — perfect for date nights, getaways, and creating unforgettable moments together. Whether you're just starting your journey or have been together for years, these experiences help you reconnect, make new memories, and keep the romance alive.",
+      // highlight: true,
     },
   ],
 };
 
 export const cheriAi = {
   eyebrow: 'Meet CheriAI',
-  title: 'Your relationship coach — awake when you need her most.',
+  title: 'More than answers.',
+  titleAccent: 'A relationship coach that understands you.',
+  ctaLabel: 'Join Free — Start Your Journey Today',
+  /** `**bold**` spans are rendered as <strong> by the Rich component. */
   body: [
-    'CheriAI is there for the 1 am questions. Real advice on relationships, mindset, and self-development — whenever you need it, judgment-free.',
-    "Ask her anything. She'll help you find clarity, and point you toward the right next step.",
+    "Getting relationship advice is easy — you can find it anywhere. What's hard is **understanding your patterns, knowing what to change, and actually making progress.**",
+    'CheriAI is built exclusively for real relationships, combining **science-based assessments, personalized AI coaching,** and ongoing guidance in one seamless experience. She remembers what matters to you, connects the dots over time, and gives practical, step-by-step support — **not just one-off answers.**',
+    "Whether you're single, dating, engaged, or married, CheriAI helps you understand yourself, communicate better, navigate challenges, and build the healthy, lasting relationship you want — always supportive, always judgment-free.",
+  ],
+  pillars: [
+    { id: 'understand', lead: 'Understand', trail: 'your patterns' },
+    { id: 'plan', lead: 'Get a clear plan', trail: 'to make real change' },
+    { id: 'progress', lead: 'See your progress', trail: 'over time' },
   ],
   panelLabel: 'CheriAI · Always here',
   conversation: [
     {
       id: 'q1',
       from: 'user',
-      text: 'How do I tell him I need more consistency without sounding needy?',
+      text: 'I keep feeling unheard when I try to explain my feelings. How can I change that?',
     },
     {
       id: 'a1',
       from: 'ai',
       tag: 'CheriAI',
-      text: 'Lead with what you want, not what\u2019s wrong: "I feel closest to you when we talk daily — can we aim for that?" Direct, not needy.',
+      text: 'From your earlier assessment, I noticed you tend to hold back when conversations become emotionally difficult. Let’s try a simple approach: use "I feel… when… because… and I need…" to express yourself clearly and calmly. I can guide you through a real situation and check in afterward to see how it went.',
     },
   ],
   footnote: 'Available anytime. Judgment-free.',
@@ -157,7 +236,12 @@ export const cheriAi = {
 
 export const finalCta = {
   eyebrow: 'Start free',
-  title: 'Stop wasting time. Start finding someone real.',
-  body: 'Free to join. Verified. Built to protect you — not waste your time.',
-  microcopy: 'No credit card required.',
+  title: 'The Relationships That Matter',
+  titleAccent: 'Deserve the Best of You.',
+  ctaLabel: 'Join Free — Start Your Journey Today',
+  body: [
+    'Love more deeply. Communicate more confidently. Understand yourself and the people who matter most.',
+    'With personalized relationship insights and guidance that grows with you, CheriPic helps turn understanding into meaningful change — wherever you are in your relationship journey.',
+  ],
+  microcopy: 'Free to join. No credit card required.',
 };

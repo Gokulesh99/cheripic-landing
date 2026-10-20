@@ -4,11 +4,27 @@
   margin: 14px auto 16px;
 }
 
+.accent {
+  background: var(--grad-accent-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bodyBlock {
+  margin-bottom: 36px;
+}
+
 .body {
   font-size: 16px;
+  line-height: 1.6;
   color: var(--muted);
-  max-width: 440px;
-  margin: 0 auto 36px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.body + .body {
+  margin-top: 16px;
 }
 
 .microcopy {
@@ -18,8 +34,16 @@
 }
 
 @media (max-width: 640px) {
-  .body {
+  .bodyBlock {
     margin-bottom: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* The CTA renders as <button> pre-launch and <a> after — match both. */
+  .bodyBlock + a,
+  .bodyBlock + button {
+    width: 100%;
   }
 }
 

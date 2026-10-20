@@ -23,3 +23,17 @@
 .sm .title {
   font-size: var(--fs-h2-sm);
 }
+
+.accent {
+  background: var(--grad-accent-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Below the fold the accent line reads better wrapping naturally. */
+@media (max-width: 640px) {
+  .title br {
+    display: none;
+  }
+}

@@ -36,6 +36,49 @@ const paths = {
     </>
   ),
   building: <path d="M4 20h16M6 20V9l6-4 6 4v11M10 20v-6h4v6" />,
+  users: (
+    <>
+      <circle cx="9" cy="8" r="3.4" />
+      <path d="M3 19.5c0-3 2.7-4.8 6-4.8s6 1.8 6 4.8" />
+      <path d="M16 5.3a3.4 3.4 0 0 1 0 6.4" />
+      <path d="M17.5 14.9c2.1.6 3.5 2.1 3.5 4.6" />
+    </>
+  ),
+  chart: (
+    <>
+      <path d="M5 20V12" />
+      <path d="M12 20V5" />
+      <path d="M19 20v-5.5" />
+    </>
+  ),
+  heart: (
+    <path d="M12 20.5s-7.5-4.3-7.5-9.4a4.3 4.3 0 0 1 7.5-2.85 4.3 4.3 0 0 1 7.5 2.85c0 5.1-7.5 9.4-7.5 9.4Z" />
+  ),
+  user: (
+    <>
+      <circle cx="12" cy="8" r="3.5" />
+      <path d="M5 20c0-3.3 3.1-5.5 7-5.5s7 2.2 7 5.5" />
+    </>
+  ),
+  // Stands in for the brand's infinity-heart glyph at avatar size.
+  infinity: (
+    <path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z" />
+  ),
+  bulb: (
+    <>
+      {/* Glass, then the screw base */}
+      <path d="M12 5a4.7 4.7 0 0 0-2.82 8.46c.47.35.74.86.74 1.41v.33h4.16v-.33c0-.55.27-1.06.74-1.41A4.7 4.7 0 0 0 12 5Z" />
+      <path d="M10.2 17.4h3.6M10.9 19.5h2.2" />
+      {/* Rays */}
+      <path d="M12 1.6v1.7M5.6 5.1l1.2 1.2M18.4 5.1l-1.2 1.2M2.8 10.6h1.7M19.5 10.6h1.7" />
+    </>
+  ),
+  prohibited: (
+    <>
+      <circle cx="12" cy="12" r="10" strokeWidth="1.9" />
+      <path d="M4.93 4.93 19.07 19.07" strokeWidth="1.9" />
+    </>
+  ),
   close: (
     <>
       <path d="M6 6 18 18" />

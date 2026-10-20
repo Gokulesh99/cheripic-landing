@@ -20,7 +20,7 @@ export default function VideoShowcase() {
           <p className={styles.caption}>{video.caption}</p>
 
           <div className={styles.ctaRow}>
-            <JoinButton size="lg">{site.ctaLabel}</JoinButton>
+            <JoinButton size="sm">{video.ctaLabel}</JoinButton>
             <span className={styles.microcopy}>{site.ctaMicrocopy}</span>
           </div>
 

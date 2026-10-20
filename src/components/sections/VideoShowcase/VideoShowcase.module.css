@@ -78,23 +78,20 @@
   color: var(--muted-dim);
 }
 
-/* --- Trust checklist --- */
+/* --- Benefit checklist --- */
 .trust {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 13px 26px;
-  max-width: 640px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px 32px;
+  max-width: 760px;
   margin-top: 24px;
-  font-size: 13.5px;
-  color: var(--muted);
 }
 
 .trustItem {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  line-height: 1.4;
+  gap: 10px;
 }
 
 .check {
@@ -102,6 +99,20 @@
   font-weight: 800;
   flex-shrink: 0;
   margin-top: 1px;
+}
+
+.trustTitle {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--white);
+  margin-bottom: 3px;
+}
+
+.trustBody {
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--muted);
 }
 
 @media (max-width: 640px) {
@@ -113,7 +124,7 @@
   }
   .trust {
     grid-template-columns: 1fr;
-    gap: 11px;
+    gap: 18px;
   }
   .ctaRow {
     gap: 12px;
