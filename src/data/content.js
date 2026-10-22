@@ -31,21 +31,22 @@ export const hero = {
   headlineAccent: ' relationship patterns?',
   subheadLead: "It's time to build",
   subheadAccent: 'Relationship Intelligence.',
-  sub: 'CheriPic is a freemium, verified space for people who want to understand themselves, break unhealthy patterns, and build the skills to create healthy, lasting relationships.',
+  sub: 'CheriPic is a freemium, verified space for people who want to understand themselves, break unhealthy patterns, and build the skills to create healthy, lasting romantic relationships.',
   cards: [
     {
       id: 'what-is-ri',
       icon: 'bulb',
       title: 'What is Relationship Intelligence?',
-      body: 'Relationship Intelligence is the self-awareness, emotional skills, and practical knowledge that help you make healthier choices, communicate better, and build stronger, lasting relationships.',
+      body: 'Relationship Intelligence is the practice of understanding your patterns, assessing your choices and communicating intentionally before and during a romantic relationship.',
     },
     {
       id: 'not-a-dating-app',
-      icon: 'prohibited',
-      titleLead: 'We are',
-      titleAccent: 'NOT',
-      titleTrail: 'a dating platform.',
-      body: 'CheriPic focuses on your growth, readiness and real connection — not casual swiping or short-term chats.',
+      icon: 'infinityHeart',
+      titleLead: '',
+      titleAccent: 'More than',
+      titleTrail: 'a dating app.',
+      body: 'CheriPic is a Relationship Intelligence Platform offering intentional romantic introductions for singles, with tools for relationship growth in development.',
+      tagline: 'Clarity Before Connection.',
     },
   ],
 };
@@ -152,50 +153,50 @@ export const howItWorks = {
 };
 
 export const perks = {
-  eyebrowLead: "We're",
+  eyebrowLead: "More",
   eyebrowAccent: 'NOT',
   eyebrowTrail: 'a dating app',
-  title: "Here's what you're",
-  titleAccent: 'actually getting.',
+  title: "Here's what ",
+  titleAccent: 'CheriPic brings you.',
   intro:
-    'Real people. Real insights. Real support — to help you build stronger, healthier relationships in every area of your life.',
+    'Intentional romantic introductions. Greater self-understanding. A clearer path to meaningful relationships - with more tools for growth on the way',
   ctaLabel: 'Join Free — Start Your Journey Today',
   items: [
     {
       id: 'community',
       icon: 'users',
-      title: 'A Safe & Genuine Community',
-      body: 'Connect with real, verified people who value meaningful conversations, emotional growth, and healthier relationships. No fakes, no bots, no games.',
+      title: 'Intentional Connections. Verified Identities.',
+      body: 'Discover identity-verified singles seeking a serious romantic relationship. Express interest, connect when it is mutual, and get to know each other in your private Red Room.',
     },
     {
       id: 'patterns',
       icon: 'chart',
-      title: 'Understand Yourself. Break the Patterns.',
-      body: 'Gain personalized insights into your relationship patterns, communication style, emotional triggers, and strengths — so you can make better choices and build more fulfilling relationships.',
+      title: 'Understand Yourself. Recognize Your Patterns.',
+      body: 'Start with a relationship readiness assessment to reflect on your choices, communication, and expectations. Build self-awareness before your next romantic connection.',
     },
     {
       id: 'guidance',
       icon: 'sparkle',
-      title: 'Practical Guidance, Anytime',
-      body: 'Get expert-backed tools, exercises, and AI-powered guidance to navigate real-life relationship challenges, improve communication, and grow with confidence. CheriAI is here whenever you need support.',
+      title: 'Reflect and Grow with CheriAI',
+      body: 'Explore relationship questions with CheriAI, our developing AI support feature. Start with reflection and conversation prompts, with more personalized guidance being developed over time.',
     },
     {
       id: 'every-stage',
       icon: 'heart',
-      title: 'Support for Every Stage',
-      body: "Whether you're single, getting to know someone, in a relationship, married, or simply want to strengthen your relationships with the people in your life — CheriPic provides relevant insights and resources for your unique journey.",
+      title: 'Your Romantic Relationship Journey',
+      body: 'Whether you are single, dating, or married, relationship readiness starts with self-awareness. Explore intentional introductions if you are single, with more tools for growth as a couple being developed.',
     },
     {
       id: 'privacy',
       icon: 'lock',
-      title: 'Your Privacy, Always Protected',
-      body: "Your information stays private and secure. You're always in control of what you share, and who sees it.",
+      title: 'Privacy You Can Understand',
+      body: 'Know how your information is used and what you share with other members. Read our Privacy Policy for details.',
     },
     {
       id: 'partners',
       icon: 'building',
-      title: 'Global Partner Access',
-      body: "Enjoy exclusive perks at partner restaurants, hotels, and curated experiences — perfect for date nights, getaways, and creating unforgettable moments together. Whether you're just starting your journey or have been together for years, these experiences help you reconnect, make new memories, and keep the romance alive.",
+      title: 'Shared Experiences with CheriPass',
+      body: 'Explore offers from our growing network of selected partners, with availability currently limited to participating locations. Discover opportunities to spend meaningful time together, with more partners and experiences added as we grow.',
       // highlight: true,
     },
   ],
@@ -203,19 +204,21 @@ export const perks = {
 
 export const cheriAi = {
   eyebrow: 'Meet CheriAI',
-  title: 'More than answers.',
-  titleAccent: 'A relationship coach that understands you.',
+  title: 'A space to reflect.',
+  /**   keeps "A clearer" together so the lone "A" never ends a line. */
+  titleAccent: 'A clearer way forward.',
   ctaLabel: 'Join Free — Start Your Journey Today',
   /** `**bold**` spans are rendered as <strong> by the Rich component. */
   body: [
-    "Getting relationship advice is easy — you can find it anywhere. What's hard is **understanding your patterns, knowing what to change, and actually making progress.**",
-    'CheriAI is built exclusively for real relationships, combining **science-based assessments, personalized AI coaching,** and ongoing guidance in one seamless experience. She remembers what matters to you, connects the dots over time, and gives practical, step-by-step support — **not just one-off answers.**',
-    "Whether you're single, dating, engaged, or married, CheriAI helps you understand yourself, communicate better, navigate challenges, and build the healthy, lasting relationship you want — always supportive, always judgment-free.",
+    'Relationship advice is everywhere. Taking time to reflect on your choices, expectations, and communication is where **greater self-awareness can begin.**',
+    "CheriAI is CheriPic's developing AI support feature for romantic relationships. Start with **relationship questions, reflection, and conversation prompts** as you explore what matters to you.",
+    'Whether you are single, dating, engaged, or married, use CheriAI as a starting point for reflection. More personalized guidance and tools for ongoing growth are being developed over time.',
   ],
+  disclaimer: 'AI responses can be mistaken. CheriAI does not replace professional counselling.',
   pillars: [
-    { id: 'understand', lead: 'Understand', trail: 'your patterns' },
-    { id: 'plan', lead: 'Get a clear plan', trail: 'to make real change' },
-    { id: 'progress', lead: 'See your progress', trail: 'over time' },
+    { id: 'reflect', lead: 'Reflect', trail: 'on your choices' },
+    { id: 'explore', lead: 'Explore', trail: 'relationship questions' },
+    { id: 'consider', lead: 'Consider', trail: 'your next step' },
   ],
   panelLabel: 'CheriAI · Always here',
   conversation: [
@@ -235,13 +238,13 @@ export const cheriAi = {
 };
 
 export const finalCta = {
-  eyebrow: 'Start free',
-  title: 'The Relationships That Matter',
-  titleAccent: 'Deserve the Best of You.',
+  eyebrow: 'Clarity before connection',
+  title: 'Your Next Chapter',
+  titleAccent: 'Starts with Clarity.',
   ctaLabel: 'Join Free — Start Your Journey Today',
   body: [
-    'Love more deeply. Communicate more confidently. Understand yourself and the people who matter most.',
-    'With personalized relationship insights and guidance that grows with you, CheriPic helps turn understanding into meaningful change — wherever you are in your relationship journey.',
+    'Understand yourself. Be clear about what you want. Meet identity-verified singles seeking a serious romantic relationship.',
+    'Start with a relationship readiness assessment, explore intentional introductions, and connect through mutual interest. More tools for relationship growth are being developed as CheriPic grows.',
   ],
   microcopy: 'Free to join. No credit card required.',
 };

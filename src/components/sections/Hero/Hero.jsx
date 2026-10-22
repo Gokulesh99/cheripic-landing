@@ -23,7 +23,7 @@ export default function Hero() {
             {hero.cards.map((card) => (
               <li key={card.id} className={styles.card}>
                 <span className={styles.cardIcon}>
-                  <Icon name={card.icon} size={25} strokeWidth={1.5} />
+                  <Icon name={card.icon} size={32} strokeWidth={1.7} />
                 </span>
                 <div className={styles.cardText}>
                   <h2 className={styles.cardTitle}>
@@ -35,6 +35,7 @@ export default function Hero() {
                     )}
                   </h2>
                   <p className={styles.cardBody}>{card.body}</p>
+                  {card.tagline && <p className={styles.cardTagline}>{card.tagline}</p>}
                 </div>
               </li>
             ))}

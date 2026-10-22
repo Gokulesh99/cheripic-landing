@@ -1,5 +1,5 @@
 .title {
-  font-size: clamp(28px, 4.6vw, 46px);
+  font-size: clamp(32px, 5.6vw, 54px);
   max-width: 680px;
   margin: 14px auto 16px;
 }

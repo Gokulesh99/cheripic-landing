@@ -19,6 +19,8 @@ export default function CheriAi() {
             </p>
           ))}
 
+          <p className={styles.disclaimer}>{cheriAi.disclaimer}</p>
+
           <ul className={styles.pillars}>
             {cheriAi.pillars.map((pillar) => (
               <li key={pillar.id} className={styles.pillar}>

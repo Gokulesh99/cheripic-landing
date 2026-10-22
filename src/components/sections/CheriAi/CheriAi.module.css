@@ -8,7 +8,9 @@
 }
 
 .title {
-  font-size: var(--fs-h2);
+  /* Lower floor than --fs-h2 (25px) so "A clearer" still lands on line one
+     at phone widths instead of wrapping. */
+  font-size: clamp(22px, 6.2vw, 36px);
   margin: 14px 0 16px;
 }
 
@@ -20,7 +22,9 @@
 }
 
 .paragraph {
-  font-size: 15.5px;
+  /* Shrinks on narrow screens so the copy block stays dense instead of
+     running tall at a fixed 15.5px. */
+  font-size: clamp(14px, 3.4vw, 15.5px);
   line-height: 1.6;
   color: var(--muted);
   max-width: 460px;
@@ -30,6 +34,15 @@
 .paragraph strong {
   font-weight: 600;
   color: var(--white);
+}
+
+/* Sits below the copy, deliberately quieter than the paragraphs. */
+.disclaimer {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted-dim);
+  max-width: 460px;
+  margin-top: 4px;
 }
 
 /* Three outcomes, read as a divided row under the copy. */
@@ -193,6 +206,7 @@
     gap: 36px;
   }
   .paragraph,
+  .disclaimer,
   .pillars {
     max-width: none;
   }
@@ -201,6 +215,19 @@
 @media (max-width: 640px) {
   .panel {
     padding: 20px 18px;
+  }
+  .paragraph {
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .disclaimer {
+    font-size: 12px;
+    line-height: 1.45;
+    margin-top: 2px;
+  }
+  .pillars {
+    margin-top: 18px;
+    padding-top: 16px;
   }
 }
 

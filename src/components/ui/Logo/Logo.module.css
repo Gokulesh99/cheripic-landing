@@ -1,7 +1,8 @@
 /* Stacked lockup: sized by height, width follows the 3:2 artwork.
-   One clamp covers every breakpoint — 34px on phones up to 44px on desktop. */
+   One clamp covers every breakpoint — 48px on phones up to 64px on desktop.
+   Stays under the hero's 96px top padding, so the fixed header still clears. */
 .logo {
-  height: clamp(34px, 4.4vw, 44px);
+  height: clamp(58px, 7.2vw, 74px);
   width: auto;
   object-fit: contain;
 }

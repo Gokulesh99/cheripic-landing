@@ -64,6 +64,15 @@ const paths = {
   infinity: (
     <path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z" />
   ),
+  // Brand mark: an infinity loop whose right lobe is an upright heart. Both
+  // halves terminate at (12.5 12.5) so the round caps join into one stroke.
+  // The heart is the classic diamond + two semicircles on its upper edges.
+  infinityHeart: (
+    <>
+      <path d="M12.5 12.5c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Z" />
+      <path d="M16.5 16.5 12.5 12.5a2.83 2.83 0 0 1 4-4 2.83 2.83 0 0 1 4 4Z" />
+    </>
+  ),
   bulb: (
     <>
       {/* Glass, then the screw base */}

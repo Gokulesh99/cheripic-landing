@@ -97,6 +97,13 @@
   color: var(--muted);
 }
 
+/* Brand line closing the card — same size as the body, carried in pink. */
+.cardTagline {
+  font-size: var(--fs-sm);
+  color: var(--pink);
+  margin-top: 8px;
+}
+
 @media (max-width: 860px) {
   .cards {
     grid-template-columns: 1fr;
