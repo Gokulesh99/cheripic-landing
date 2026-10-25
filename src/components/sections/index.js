@@ -4,4 +4,5 @@ export { default as Hero } from './Hero';
 export { default as HowItWorks } from './HowItWorks';
 export { default as Pain } from './Pain';
 export { default as Perks } from './Perks';
+export { default as Pricing } from './Pricing';
 export { default as VideoShowcase } from './VideoShowcase';

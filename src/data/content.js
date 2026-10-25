@@ -202,6 +202,77 @@ export const perks = {
   ],
 };
 
+export const pricing = {
+  eyebrow: 'Membership',
+  title: 'Start with clarity. Grow at your pace.',
+  subtitle: 'Join free. Upgrade when you’re ready for more.',
+  intro: 'For singles seeking connection, and those nurturing the relationship they have.',
+  plans: [
+    {
+      id: 'free',
+      name: 'Free',
+      price: '$0',
+      period: '/ month',
+      note: 'No credit card required.',
+      tagline: 'A thoughtful place to begin.',
+      features: [
+        'Relationship readiness reflection',
+        'Limited conversations with CheriAI',
+        'Up to 2 active introductions at a time',
+        'Selected CheriPass offers, where available',
+        'Keep Connect off for reflection and shared perks',
+      ],
+      ctaLabel: 'Join Free',
+      microcopy: 'Create your free account.',
+    },
+    {
+      id: 'premium-lite',
+      name: 'Premium Lite',
+      price: '$24.99',
+      period: '/ month',
+      note: 'Billed monthly.',
+      tagline: 'More room for reflection and connection.',
+      features: [
+        'Everything in Free, plus',
+        'More conversations with CheriAI',
+        'Up to 5 active introductions at a time',
+        'Access to additional eligible CheriPass offers',
+        'For singles, dating and married members',
+      ],
+      ctaLabel: 'Join Free',
+      microcopy: 'Upgrade to Premium Lite when you’re ready.',
+      /** Opens selected; the visitor can pick another. */
+      defaultSelected: true,
+    },
+    {
+      id: 'premium',
+      name: 'Premium',
+      badge: 'Coming soon',
+      price: '$59.99',
+      period: '/ month',
+      note: 'Planned price. Not available for purchase.',
+      tagline: 'More personalised possibilities.',
+      features: [
+        'Planned: everything in Premium Lite, plus',
+        'More preference controls',
+        'Up to 15 active introductions at a time',
+        'Expanded CheriAI and optional Trust Radar',
+        'Connection reviews and retreat opportunities',
+      ],
+      ctaLabel: 'Coming Soon',
+      /** Not purchasable yet — renders an inert ghost button. */
+      ctaDisabled: true,
+      microcopy: 'Features subject to development and testing.',
+    },
+  ],
+  disclaimers: [
+    'Introductions are for eligible singles and depend on member availability. Limits are active introductions, not guaranteed weekly totals.',
+    'CheriAI usage is limited. Partner purchases, retreats and travel cost extra; availability and partner terms apply.',
+    'AI support does not guarantee compatibility, trustworthiness or safety.',
+  ],
+  footerLine: 'Clarity Before Connection · Prepare → Connect → Grow Together',
+};
+
 export const cheriAi = {
   eyebrow: 'Meet CheriAI',
   title: 'A space to reflect.',

@@ -14,6 +14,7 @@ import VideoShowcase from '@components/sections/VideoShowcase';
 const Pain = lazy(() => import('@components/sections/Pain'));
 const HowItWorks = lazy(() => import('@components/sections/HowItWorks'));
 const Perks = lazy(() => import('@components/sections/Perks'));
+const Pricing = lazy(() => import('@components/sections/Pricing'));
 const CheriAi = lazy(() => import('@components/sections/CheriAi'));
 const FinalCta = lazy(() => import('@components/sections/FinalCta'));
 
@@ -39,6 +40,7 @@ export default function Home() {
           <Pain />
           <HowItWorks />
           <Perks />
+          <Pricing />
           <CheriAi />
           <FinalCta />
         </Suspense>

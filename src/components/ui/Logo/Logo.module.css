@@ -1,8 +1,8 @@
-/* Stacked lockup: sized by height, width follows the 3:2 artwork.
-   One clamp covers every breakpoint — 48px on phones up to 64px on desktop.
+/* Horizontal lockup: sized by height, width follows the 3:1 artwork, so a
+   56px cap renders ~168px wide — the width is what carries the presence here.
    Stays under the hero's 96px top padding, so the fixed header still clears. */
 .logo {
-  height: clamp(58px, 7.2vw, 74px);
+  height: clamp(44px, 4.6vw, 56px);
   width: auto;
   object-fit: contain;
 }
