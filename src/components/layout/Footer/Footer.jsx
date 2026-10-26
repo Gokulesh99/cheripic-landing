@@ -14,6 +14,8 @@ export default function Footer() {
         <nav className={styles.links} aria-label="Footer">
           <a href={site.privacyUrl}>Privacy</a>
           <a href={site.termsUrl}>Terms</a>
+          <a href={site.communityUrl}>Community</a>
+          <a href={site.deleteAccountUrl}>Delete account</a>
           <a
             className={styles.whatsapp}
             href={whatsappUrl}

@@ -5,6 +5,7 @@ import Home from '@pages/Home';
 // The legal agreement is a large, rarely-visited route — split it out so it
 // never weighs down the landing page's initial load.
 const Legal = lazy(() => import('@pages/Legal'));
+const DeleteAccount = lazy(() => import('@pages/DeleteAccount'));
 
 /**
  * Routes live in the hash (`#/legal/privacy`) so the build stays a static
@@ -27,6 +28,21 @@ export default function App() {
     return (
       <Suspense fallback={null}>
         <Legal focus="privacy" />
+      </Suspense>
+    );
+
+  // Linked from the mobile app (Profile & settings) and app-store listings.
+  if (route === '/community-guidelines')
+    return (
+      <Suspense fallback={null}>
+        <Legal focus="conduct" />
+      </Suspense>
+    );
+
+  if (route === '/delete-account')
+    return (
+      <Suspense fallback={null}>
+        <DeleteAccount />
       </Suspense>
     );
 

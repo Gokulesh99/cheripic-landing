@@ -46,6 +46,52 @@
   display: block;
 }
 
+/* Thumbnail facade — looks like the frame, clicks to load the real player. */
+.facade {
+  padding: 0;
+  cursor: pointer;
+}
+
+.thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Subtle darkening so the play button always reads against the thumbnail. */
+.facade::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
+}
+
+.playBtn {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  padding-left: 4px;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(109, 40, 217, 0.92);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  transition:
+    transform var(--t-fast) var(--ease),
+    background var(--t-fast) var(--ease);
+}
+
+.facade:hover .playBtn,
+.facade:focus-visible .playBtn {
+  transform: scale(1.08);
+  background: var(--pink);
+}
+
 .empty {
   padding: 24px;
   text-align: center;

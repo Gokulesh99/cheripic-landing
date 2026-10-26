@@ -220,6 +220,24 @@
   background: var(--grad-cta);
 }
 
+.ol {
+  margin: 0 0 18px;
+  padding-left: 22px;
+  display: grid;
+  gap: 8px;
+}
+
+.oli {
+  padding-left: 4px;
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  color: var(--muted);
+}
+.oli::marker {
+  color: var(--pink);
+  font-weight: 600;
+}
+
 .email {
   display: inline-block;
   margin-top: 4px;

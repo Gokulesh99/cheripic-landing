@@ -44,30 +44,55 @@
     <meta name="twitter:image" content="https://cheripic.com/og-image.png" />
     <meta name="twitter:image:alt" content="CheriPic — Relationship Intelligence" />
 
-    <!-- Video player warms up on idle; get the handshakes out of the way early. -->
-    <link rel="preconnect" href="https://www.youtube.com" />
-    <link rel="preconnect" href="https://i.ytimg.com" />
+    <!-- The video iframe only loads when the visitor clicks play, so YouTube's
+         own origins just get a cheap DNS hint. i.ytimg.com gets a full
+         preconnect because the thumbnail below is the mobile LCP element. -->
+    <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.youtube.com" />
     <link rel="dns-prefetch" href="https://googlevideo.com" />
 
+    <!-- The video thumbnail is the LCP element on mobile. Preload it so it
+         downloads in parallel with the JS bundle instead of waiting for React
+         to render the <img>. Keep the id in sync with the video in
+         src/data/content.js (currently youtu.be/UAx4HDNpJE4). -->
+    <link
+      rel="preload"
+      as="image"
+      href="https://i.ytimg.com/vi/UAx4HDNpJE4/mqdefault.jpg"
+      media="(max-width: 700px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="https://i.ytimg.com/vi/UAx4HDNpJE4/maxresdefault.jpg"
+      media="(min-width: 701px)"
+    />
+
+    <!-- Fonts load with display=optional (non-blocking), so a DNS hint for the
+         stylesheet host is enough; only the font-file origin gets a preconnect.
+         Keeps the total preconnect count low, as Lighthouse recommends. -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Preload the app entry so it downloads alongside the HTML parse. -->
     <link rel="modulepreload" href="/src/main.jsx" />
 
     <!-- Load fonts without blocking render: fetch as a stylesheet, then swap
-         it in on load. font-display:swap paints text with a fallback first. -->
+         it in on load. font-display:optional means the browser gives the font a
+         brief window, then commits to the fallback for the rest of that load
+         (no swap-in reflow) — the font is cached for the next visit. This keeps
+         layout shift (CLS) out of the hero headline on cold loads. -->
     <link
       rel="preload"
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=optional"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=optional"
       />
     </noscript>
 

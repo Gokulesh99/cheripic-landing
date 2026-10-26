@@ -1,6 +1,6 @@
 import styles from './Legal.module.css';
 
-/** Renders one body entry: paragraph, sub-heading, bullet list, or email. */
+/** Renders one body entry: paragraph, sub-heading, bullet or numbered list, or email. */
 export default function LegalBlock({ item }) {
   if (typeof item === 'string') return <p className={styles.p}>{item}</p>;
 
@@ -15,6 +15,18 @@ export default function LegalBlock({ item }) {
           </li>
         ))}
       </ul>
+    );
+  }
+
+  if (item.ol) {
+    return (
+      <ol className={styles.ol}>
+        {item.ol.map((line) => (
+          <li key={line} className={styles.oli}>
+            {line}
+          </li>
+        ))}
+      </ol>
     );
   }
 

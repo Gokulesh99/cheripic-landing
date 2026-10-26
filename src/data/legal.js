@@ -13,7 +13,7 @@
 export const legalMeta = {
   title: 'CheriPic Master User Agreement',
   subtitle:
-    'Privacy Policy · Terms of Service · Disclaimer · AI Policy · Subscription Policy · Community Guidelines',
+    'Privacy Policy · Terms of Service · Disclaimer · AI Policy · Subscription Policy · Community Guidelines · Account Deletion',
   effectiveDate: 'August 29, 2026',
   platform: 'CheriPic®',
   operatedBy: 'Cave Xpert Inc.',
@@ -60,14 +60,14 @@ export const legalSections = [
       'To use CheriPic, you must:',
       {
         ul: [
-          'Be at least 21 years of age',
+          'Be at least 18 years of age',
           'Have legal capacity to enter into binding agreements',
           'Comply with applicable laws in your jurisdiction',
           'Provide accurate information',
         ],
       },
       'We reserve the right to verify age and identity at any time.',
-      'Accounts found to belong to persons under 21 years of age may be terminated immediately.',
+      'Accounts found to belong to persons under 18 years of age may be terminated immediately.',
     ],
   },
   {
@@ -241,6 +241,8 @@ export const legalSections = [
       { ul: ['Device data', 'Browser information', 'Usage data', 'IP address', 'Login records'] },
       { sub: 'Relationship Intelligence Data' },
       { ul: ['Assessment responses', 'Preferences', 'Compatibility responses', 'Communication patterns'] },
+      { sub: 'Identity Verification Images' },
+      'Members who choose to use Connect submit a photo of a government-issued ID and a fresh verification selfie. These images, and the legal name provided for verification, are used only for identity review. They are not shown on member profiles or to other members.',
     ],
   },
   {
@@ -311,7 +313,42 @@ export const legalSections = [
     ],
   },
   {
+    id: 'deletion',
     num: '16',
+    title: 'Data Retention and Account Deletion',
+    body: [
+      'We keep personal information for as long as your account is active and as needed to provide the services, then as required by law or for the safety purposes described below.',
+      { sub: 'Deleting your account' },
+      'You can permanently delete your account at any time in the CheriPic app (Profile & settings › Delete account) or by emailing support@cheripic.com from the address you use to sign in. Step-by-step instructions are available at cheripic.com/#/delete-account.',
+      'When an account is deleted, we delete:',
+      {
+        ul: [
+          'Your profile, profile photos and Connect photos',
+          'Identity verification images and verification details',
+          'Interests, connections, Red Room conversations and notifications',
+          'CheriAI conversations, reflection and assessment responses, and saved preferences',
+          'Your sign-in account and active sessions',
+        ],
+      },
+      { sub: 'Records we may retain' },
+      'We may retain a limited set of records where we have a legal obligation or a legitimate safety purpose, including:',
+      {
+        ul: [
+          'Payment and billing records',
+          'Reports made about member conduct and related moderation records',
+          'Records of account suspensions, to help prevent removed members from returning',
+          'Records of transactional emails and notifications we sent',
+          'A minimal, anonymised record that a deletion was requested and completed',
+        ],
+      },
+      'Retained records are kept only for as long as necessary for these purposes and are then deleted.',
+      { sub: 'Subscriptions' },
+      'Memberships purchased on cheripic.com are cancelled when your account is deleted. Subscriptions purchased through the Apple App Store or Google Play must also be cancelled in that store to stop future charges.',
+      'Content that other members have already copied or saved outside CheriPic cannot be recalled.',
+    ],
+  },
+  {
+    num: '17',
     title: 'Partner Benefits and Privileges',
     body: [
       'CheriPic may partner with:',
@@ -333,7 +370,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '17',
+    num: '18',
     title: 'Limitation of Partner Liability',
     body: [
       'To the fullest extent permitted by law, CheriPic and Cave Xpert Inc. shall not be liable for:',
@@ -357,7 +394,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '18',
+    num: '19',
     title: 'Experiences and Events',
     body: [
       'Members participate in experiences, activities, travel, events, meetups, dinners, retreats, and social gatherings entirely at their own risk.',
@@ -367,7 +404,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '19',
+    num: '20',
     title: 'Promotional Benefits and Member Rewards',
     body: [
       'From time to time CheriPic may offer:',
@@ -411,7 +448,7 @@ export const legalSections = [
   },
   {
     id: 'subscriptions',
-    num: '20',
+    num: '21',
     title: 'Subscriptions',
     body: [
       'CheriPic may offer:',
@@ -421,7 +458,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '21',
+    num: '22',
     title: 'Refund Policy',
     body: [
       'All purchases are generally final.',
@@ -447,7 +484,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '22',
+    num: '23',
     title: 'Intellectual Property',
     body: [
       'All intellectual property rights relating to CheriPic, CheriAI, assessments, reports, systems, branding, software, content, designs, graphics, videos, educational materials, and methodologies remain the exclusive property of Cave Xpert Inc.',
@@ -455,7 +492,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '23',
+    num: '24',
     title: 'Termination',
     body: [
       'CheriPic may suspend, restrict, investigate, or terminate accounts at any time for:',
@@ -475,7 +512,7 @@ export const legalSections = [
   },
   {
     id: 'disclaimer',
-    num: '24',
+    num: '25',
     title: 'Disclaimer of Warranties',
     body: [
       'ALL SERVICES ARE PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS.',
@@ -495,7 +532,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '25',
+    num: '26',
     title: 'Limitation of Liability',
     body: [
       'TO THE MAXIMUM EXTENT PERMITTED BY LAW, CAVE XPERT INC., CHERIPIC, CHERIAI, ITS OFFICERS, DIRECTORS, EMPLOYEES, CONTRACTORS, AFFILIATES, SUCCESSORS, ASSIGNS, AND PARTNERS SHALL NOT BE LIABLE FOR:',
@@ -531,7 +568,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '26',
+    num: '27',
     title: 'Indemnification',
     body: [
       'You agree to defend, indemnify, and hold harmless Cave Xpert Inc., CheriPic, CheriAI, affiliates, officers, employees, contractors, and partners from any claims, losses, liabilities, damages, costs, expenses, and legal fees arising from:',
@@ -548,7 +585,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '27',
+    num: '28',
     title: 'Governing Law and Dispute Resolution',
     body: [
       'Before commencing formal legal proceedings, parties agree to first attempt good-faith resolution through direct communication with CheriPic.',
@@ -556,7 +593,7 @@ export const legalSections = [
     ],
   },
   {
-    num: '28',
+    num: '29',
     title: 'Changes to This Agreement',
     body: [
       'CheriPic may update this Agreement at any time.',
@@ -566,7 +603,7 @@ export const legalSections = [
   },
   {
     id: 'contact',
-    num: '29',
+    num: '30',
     title: 'Contact',
     body: [
       'Questions, complaints, legal notices, privacy requests, and support inquiries may be directed to:',
