@@ -5,14 +5,19 @@ import { pricing } from '@data/content';
 import PlanCard from './PlanCard';
 import styles from './Pricing.module.css';
 
-export default function Pricing() {
+export default function Pricing({ headingLevel = 'h2' }) {
   // Which plan opens selected is data-driven; falls back to the first.
   const defaultPlan = pricing.plans.find((plan) => plan.defaultSelected) ?? pricing.plans[0];
   const [selectedId, setSelectedId] = useState(defaultPlan.id);
 
   return (
     <Section id="pricing" tone="soft">
-      <SectionHeading eyebrow={pricing.eyebrow} title={pricing.title} width="860px">
+      <SectionHeading
+        as={headingLevel}
+        eyebrow={pricing.eyebrow}
+        title={pricing.title}
+        width="860px"
+      >
         <p className={styles.subtitle}>{pricing.subtitle}</p>
         <p className={styles.intro}>{pricing.intro}</p>
       </SectionHeading>

@@ -6,6 +6,7 @@ import styles from './SectionHeading.module.css';
 /**
  * Eyebrow + title block shared by every section.
  * size 'lg' matches the standard section heading, 'sm' the tighter one.
+ * `as` lifts the heading to h1 when a section is the whole page.
  */
 export default function SectionHeading({
   eyebrow,
@@ -13,6 +14,7 @@ export default function SectionHeading({
   titleAccent,
   align = 'center',
   size = 'lg',
+  as: Heading = 'h2',
   width,
   className,
   children,
@@ -24,12 +26,12 @@ export default function SectionHeading({
     >
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
       {(title || titleAccent) && (
-        <h2 className={styles.title}>
+        <Heading className={styles.title}>
           {title}
           {/* The space survives when the break is dropped on narrow screens. */}
           {title && titleAccent && <> <br /></>}
           {titleAccent && <span className={styles.accent}>{titleAccent}</span>}
-        </h2>
+        </Heading>
       )}
       {children}
     </Reveal>

@@ -6,6 +6,7 @@ import Home from '@pages/Home';
 // never weighs down the landing page's initial load.
 const Legal = lazy(() => import('@pages/Legal'));
 const DeleteAccount = lazy(() => import('@pages/DeleteAccount'));
+const Pricing = lazy(() => import('@pages/Pricing'));
 
 /**
  * Routes live in the hash (`#/legal/privacy`) so the build stays a static
@@ -36,6 +37,13 @@ export default function App() {
     return (
       <Suspense fallback={null}>
         <Legal focus="conduct" />
+      </Suspense>
+    );
+
+  if (route === '/pricing')
+    return (
+      <Suspense fallback={null}>
+        <Pricing />
       </Suspense>
     );
 

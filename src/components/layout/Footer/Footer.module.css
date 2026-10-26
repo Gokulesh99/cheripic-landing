@@ -18,8 +18,15 @@
   gap: 20px;
 }
 
+.group {
+  display: flex;
+  gap: 20px;
+}
+
 .links a {
   color: var(--muted-dim);
+  /* Keep "Delete account" on one line — it was breaking in two. */
+  white-space: nowrap;
   transition: color var(--t-fast) var(--ease);
 }
 .links a:hover {
@@ -46,5 +53,18 @@
   .inner {
     justify-content: center;
     text-align: center;
+  }
+  /* Privacy / Terms / Community on one row, Pricing / Delete account /
+     Connect on the next. */
+  .links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
   }
 }

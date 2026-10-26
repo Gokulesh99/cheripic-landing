@@ -1,0 +1,40 @@
+/* Clears the fixed header, then hands off to the section's own rhythm.
+   Background matches Section's `soft` tone so the strip holding the back
+   link reads as one surface with the plans below it. */
+.page {
+  position: relative;
+  padding-top: clamp(96px, 13vw, 118px);
+  background:
+    radial-gradient(ellipse 70% 45% at 50% -10%, rgba(109, 40, 217, 0.42), transparent 62%),
+    radial-gradient(ellipse 50% 35% at 92% 2%, rgba(255, 77, 141, 0.13), transparent 62%),
+    var(--bg-soft);
+}
+
+/* Same pill as the legal pages, so returning home feels identical. */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 15px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--card-border);
+  background: rgba(247, 243, 252, 0.04);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  transition:
+    color var(--t-fast) var(--ease),
+    border-color var(--t-fast) var(--ease);
+}
+
+.back:hover {
+  color: var(--white);
+  border-color: var(--lav-light);
+}
+
+/* The section paints an opaque `soft` background of its own, which cut the
+   page glow off in a hard line under the back pill. Let the gradient run
+   through it, and tighten its leading space to the legal pages' rhythm. */
+.page > section {
+  background: transparent;
+  padding-top: 30px;
+}
