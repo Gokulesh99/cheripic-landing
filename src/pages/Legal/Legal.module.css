@@ -147,10 +147,23 @@
 .doc {
   max-width: 74ch;
 }
+/* Pages without the TOC layout (delete account, law enforcement) need the
+   same breathing room under the header divider that .layout gives. */
+.head + .doc {
+  padding-top: 40px;
+}
 
 .section {
   scroll-margin-top: 92px;
   padding-bottom: 34px;
+}
+/* The page's own bottom padding sets the gap to the footer — don't stack
+   the last section's padding and its last paragraph's margin on top. */
+.section:last-child {
+  padding-bottom: 0;
+}
+.section:last-child > :last-child {
+  margin-bottom: 0;
 }
 .section + .section {
   padding-top: 34px;
@@ -241,6 +254,7 @@
 .email {
   display: inline-block;
   margin-top: 4px;
+  margin-bottom: 14px;
   padding: 10px 18px;
   border-radius: var(--r-pill);
   background: rgba(247, 243, 252, 0.05);
@@ -293,7 +307,7 @@
   }
 
   .page {
-    padding-bottom: calc(var(--section-y) + 40px);
+    padding-bottom: 40px;
   }
 }
 

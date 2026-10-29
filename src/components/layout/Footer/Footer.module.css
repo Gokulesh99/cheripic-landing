@@ -48,6 +48,9 @@
 /* Leave room for the sticky bar on touch layouts */
 @media (max-width: 860px) {
   .footer {
+    padding-bottom: calc(36px + env(safe-area-inset-bottom));
+  }
+  .withSticky {
     padding-bottom: calc(96px + env(safe-area-inset-bottom));
   }
   .inner {

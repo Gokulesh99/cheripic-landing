@@ -15,6 +15,7 @@ export const site = {
   deletionPolicyUrl: '#/legal/deletion',
   deleteAccountUrl: '#/delete-account',
   pricingUrl: '#/pricing',
+  lawEnforcementUrl: '#/law-enforcement',
   ctaLabel: 'Join Free — Start Your Journey Today',
   ctaMicrocopy: 'Free to join. No credit card required.',
   legal: 'CheriPic — a division of Cave Xpert Inc. © 2026',

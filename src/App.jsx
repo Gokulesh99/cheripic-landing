@@ -7,6 +7,7 @@ import Home from '@pages/Home';
 const Legal = lazy(() => import('@pages/Legal'));
 const DeleteAccount = lazy(() => import('@pages/DeleteAccount'));
 const Pricing = lazy(() => import('@pages/Pricing'));
+const LawEnforcement = lazy(() => import('@pages/LawEnforcement'));
 
 /**
  * Routes live in the hash (`#/legal/privacy`) so the build stays a static
@@ -44,6 +45,13 @@ export default function App() {
     return (
       <Suspense fallback={null}>
         <Pricing />
+      </Suspense>
+    );
+
+  if (route === '/law-enforcement')
+    return (
+      <Suspense fallback={null}>
+        <LawEnforcement />
       </Suspense>
     );
 

@@ -6,9 +6,10 @@ import styles from './Footer.module.css';
 /** wa.me wants the number as digits only — no +, spaces or dashes. */
 const whatsappUrl = `https://wa.me/${site.whatsappNumber.replace(/\D/g, '')}`;
 
-export default function Footer() {
+/** `withStickyCta` reserves room for the landing page's fixed mobile CTA bar. */
+export default function Footer({ withStickyCta = false }) {
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${withStickyCta ? styles.withSticky : ''}`}>
       <Container className={styles.inner}>
         <span>{site.legal}</span>
         {/* Two groups so the row splits predictably on narrow screens
@@ -18,6 +19,7 @@ export default function Footer() {
             <a href={site.privacyUrl}>Privacy</a>
             <a href={site.termsUrl}>Terms</a>
             <a href={site.communityUrl}>Community</a>
+            <a href={site.lawEnforcementUrl}>Legal</a>
           </div>
           <div className={styles.group}>
             {/* <a href={site.pricingUrl}>Pricing</a> */}

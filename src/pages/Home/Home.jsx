@@ -46,7 +46,7 @@ export default function Home() {
         </Suspense>
       </main>
 
-      <Footer />
+      <Footer withStickyCta />
       <StickyCta />
     </ComingSoonProvider>
   );
