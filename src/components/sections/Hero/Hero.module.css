@@ -51,6 +51,18 @@
   max-width: 620px;
 }
 
+/* 21+ eligibility notice — quieter than the lead, set off by a pink rule. */
+.notice {
+  display: grid;
+  gap: 8px;
+  max-width: 620px;
+  margin-top: 18px;
+  padding-left: 16px;
+  border-left: 2px solid var(--pink);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+
 .cards {
   list-style: none;
   display: grid;
@@ -68,13 +80,16 @@
   border: 1px solid var(--card-border);
 }
 
-/* The glyphs carry their own shape, so no chip behind them. */
+/* The glyphs carry their own shape, so no chip behind them. Pinned to the
+   top and centred on the title's first line (32px glyph vs ~22px line), so
+   both cards' icons line up however long the body runs. */
 .cardIcon {
   flex: none;
+  align-self: flex-start;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 2px;
+  margin-top: -5px;
   color: var(--lav-light);
 }
 
@@ -101,7 +116,7 @@
 .cardTagline {
   font-size: var(--fs-sm);
   color: var(--pink);
-  margin-top: 8px;
+  margin-top: 2px;
 }
 
 @media (max-width: 860px) {

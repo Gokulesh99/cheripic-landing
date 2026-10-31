@@ -6,8 +6,27 @@ import Home from '@pages/Home';
 // never weighs down the landing page's initial load.
 const Legal = lazy(() => import('@pages/Legal'));
 const DeleteAccount = lazy(() => import('@pages/DeleteAccount'));
-const Pricing = lazy(() => import('@pages/Pricing'));
-const LawEnforcement = lazy(() => import('@pages/LawEnforcement'));
+const Policy = lazy(() => import('@pages/Policy'));
+
+/**
+ * Standalone policy pages, keyed by route -> policies.js entry. Checked
+ * before the `/legal/<section>` catch-all so these slugs win over clauses.
+ * The un-prefixed aliases keep links already shipped in the mobile app and
+ * app-store listings working.
+ */
+const policyRoutes = {
+  '/legal/acceptable-use': 'acceptableUse',
+  '/legal/community-guidelines': 'communityGuidelines',
+  '/community-guidelines': 'communityGuidelines',
+  '/legal/law-enforcement': 'lawEnforcement',
+  '/law-enforcement': 'lawEnforcement',
+  '/legal/subscriptions-refunds': 'subscriptions',
+  // Plans and their terms are one page now.
+  '/pricing': 'subscriptions',
+  '/safety': 'safety',
+  '/service-availability': 'availability',
+  '/contact': 'contact',
+};
 
 /**
  * Routes live in the hash (`#/legal/privacy`) so the build stays a static
@@ -16,6 +35,14 @@ const LawEnforcement = lazy(() => import('@pages/LawEnforcement'));
  */
 export default function App() {
   const route = useHashRoute();
+
+  const policy = policyRoutes[route];
+  if (policy)
+    return (
+      <Suspense fallback={null}>
+        <Policy page={policy} />
+      </Suspense>
+    );
 
   if (route === '/legal' || route.startsWith('/legal/')) {
     const focus = route.slice('/legal'.length).replace(/^\//, '');
@@ -30,28 +57,6 @@ export default function App() {
     return (
       <Suspense fallback={null}>
         <Legal focus="privacy" />
-      </Suspense>
-    );
-
-  // Linked from the mobile app (Profile & settings) and app-store listings.
-  if (route === '/community-guidelines')
-    return (
-      <Suspense fallback={null}>
-        <Legal focus="conduct" />
-      </Suspense>
-    );
-
-  if (route === '/pricing')
-    return (
-      <Suspense fallback={null}>
-        <Pricing />
-      </Suspense>
-    );
-
-  if (route === '/law-enforcement')
-    return (
-      <Suspense fallback={null}>
-        <LawEnforcement />
       </Suspense>
     );
 

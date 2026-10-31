@@ -8,18 +8,37 @@ export const site = {
   joinUrl: 'http://app.cheripic.com',
   signInUrl: 'http://app.cheripic.com',
   whatsappNumber: '+971 52 758 5003',
-  supportEmail: 'hello@cheripic.com',
+  supportEmail: 'support@cheripic.com',
   privacyUrl: '#/legal/privacy',
   termsUrl: '#/legal',
-  communityUrl: '#/legal/conduct',
+  acceptableUseUrl: '#/legal/acceptable-use',
+  communityUrl: '#/legal/community-guidelines',
+  safetyUrl: '#/safety',
+  lawEnforcementUrl: '#/legal/law-enforcement',
+  subscriptionsUrl: '#/legal/subscriptions-refunds',
   deletionPolicyUrl: '#/legal/deletion',
   deleteAccountUrl: '#/delete-account',
-  pricingUrl: '#/pricing',
-  lawEnforcementUrl: '#/law-enforcement',
+  availabilityUrl: '#/service-availability',
+  contactUrl: '#/contact',
   ctaLabel: 'Join Free — Start Your Journey Today',
-  ctaMicrocopy: 'Free to join. No credit card required.',
+  ctaMicrocopy: 'Free to join. No credit card required. For adults aged 21 and over.',
   legal: 'CheriPic — a division of Cave Xpert Inc. © 2026',
+  operator: 'CheriPic is operated by Cave Xpert Inc., a Delaware-incorporated company.',
 };
+
+/** Footer policy links, in display order. Every page opens without signing in. */
+export const footerLinks = [
+  { label: 'Terms of Service', href: site.termsUrl },
+  { label: 'Privacy Policy', href: site.privacyUrl },
+  { label: 'Acceptable Use Policy', href: site.acceptableUseUrl },
+  { label: 'Community Guidelines', href: site.communityUrl },
+  { label: 'Safety & Child Protection', href: site.safetyUrl },
+  { label: 'Law Enforcement Guidelines', href: site.lawEnforcementUrl },
+  { label: 'Subscriptions & Refunds', href: site.subscriptionsUrl },
+  { label: 'Delete Account', href: site.deleteAccountUrl },
+  { label: 'Service Availability & Regional Terms', href: site.availabilityUrl },
+  { label: 'Contact Us', href: site.contactUrl },
+];
 
 /** Copy for the pre-launch overlay every Join CTA opens. */
 export const comingSoon = {
@@ -36,7 +55,13 @@ export const hero = {
   headlineAccent: ' relationship patterns?',
   subheadLead: "It's time to build",
   subheadAccent: 'Relationship Intelligence.',
-  sub: 'CheriPic is a freemium, verified space for people who want to understand themselves, break unhealthy patterns, and build the skills to create healthy, lasting romantic relationships.',
+  sub: 'CheriPic is a Relationship Intelligence Platform for adults aged 21 and over. Singles can prepare for intentional romantic introductions. Engaged and married members can keep introductions switched off and focus on reflection and relationship growth as these features become available.',
+  notice: [
+    'CheriPic is a Relationship Intelligence Platform for adults aged 21 and over.',
+    'Singles can prepare for intentional romantic introductions. Engaged and married members can keep introductions switched off and focus on reflection and relationship growth.',
+    'Our journey is simple: Prepare → Connect → Grow Together.',
+    'Features and partner offers vary by membership and country.',
+  ],
   cards: [
     {
       id: 'what-is-ri',
@@ -52,6 +77,8 @@ export const hero = {
       titleTrail: 'a dating app.',
       body: 'CheriPic is a Relationship Intelligence Platform offering intentional romantic introductions for singles, with tools for relationship growth in development.',
       tagline: 'Clarity Before Connection.',
+      taglineMicrocopy: 'Prepare → Connect → Grow Together.',
+      taglineMicroCopy2: 'Features and partner offers vary by membership and country.',
     },
   ],
 };
@@ -216,7 +243,7 @@ export const pricing = {
     {
       id: 'free',
       name: 'Free',
-      price: '$0',
+      price: 'USD 0',
       period: '/ month',
       note: 'No credit card required.',
       tagline: 'A thoughtful place to begin.',
@@ -233,9 +260,16 @@ export const pricing = {
     {
       id: 'premium-lite',
       name: 'Premium Lite',
-      price: '$24.99',
+      price: 'USD 24.99',
       period: '/ month',
       note: 'Billed monthly.',
+      /** Auto-renewal terms shown directly under the purchase button. */
+      renewal: {
+        text: 'USD 24.99 per month. Renews automatically until cancelled. Cancel future renewals through Manage Subscription.',
+        linkLead: 'See our',
+        linkLabel: 'Subscription, Cancellation & Refund Policy',
+        linkTrail: 'before purchasing.',
+      },
       tagline: 'More room for reflection and connection.',
       features: [
         'Everything in Free, plus',
@@ -322,5 +356,5 @@ export const finalCta = {
     'Understand yourself. Be clear about what you want. Meet identity-verified singles seeking a serious romantic relationship.',
     'Start with a relationship readiness assessment, explore intentional introductions, and connect through mutual interest. More tools for relationship growth are being developed as CheriPic grows.',
   ],
-  microcopy: 'Free to join. No credit card required.',
+  microcopy: 'Free to join. No credit card required. For adults aged 21 and over.',
 };

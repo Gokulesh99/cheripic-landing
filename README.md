@@ -83,6 +83,19 @@ route when it starts with `#/`, so in-page anchors (`#top`, `#main`) still work.
 | `#/legal` | Master User Agreement, from the top |
 | `#/legal/<section-id>` | Agreement, scrolled to that clause |
 | `#/privacy`, `#/terms` | shortcuts into the same page |
+| `#/legal/acceptable-use` | Acceptable Use Policy |
+| `#/legal/community-guidelines` (also `#/community-guidelines`) | Community Guidelines |
+| `#/legal/law-enforcement` (also `#/law-enforcement`) | Law Enforcement Guidelines |
+| `#/legal/subscriptions-refunds` (also `#/pricing`) | Membership plans, then Subscriptions, Cancellation & Refunds |
+| `#/safety` | Safety & Child Protection |
+| `#/service-availability` | Service Availability |
+| `#/contact` | Contact Us |
+| `#/delete-account` | Account deletion instructions and request form |
+
+Standalone policy pages share one component (`pages/Policy`) and take their
+copy from `src/data/policies.js`. Clean paths (`/safety`) are folded into the
+hash route on load, which works wherever the host serves `index.html` for
+unknown paths.
 
 Clause ids come from `legal.js`: a section with `id: 'privacy'` is linkable as
 `#/legal/privacy`; unnamed ones fall back to `#/legal/s7` (the clause number).

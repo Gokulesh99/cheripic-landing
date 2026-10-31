@@ -4,33 +4,39 @@
 }
 
 .inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  gap: 22px;
   font-size: var(--fs-xs);
   color: var(--muted-dim);
 }
 
+/* Ten policy links — let them wrap as a row rather than splitting into
+   fixed groups. */
 .links {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px 22px;
 }
 
-.group {
-  display: flex;
-  gap: 20px;
-}
-
-.links a {
+.links a,
+.company a {
   color: var(--muted-dim);
-  /* Keep "Delete account" on one line — it was breaking in two. */
+  /* Keep multi-word labels ("Delete Account") on one line. */
   white-space: nowrap;
   transition: color var(--t-fast) var(--ease);
 }
-.links a:hover {
+.links a:hover,
+.company a:hover {
   color: var(--lav-light);
+}
+
+/* Operator, support and copyright on one line, spaced like the links. */
+.company {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--hairline);
 }
 
 .whatsapp {
@@ -54,20 +60,11 @@
     padding-bottom: calc(96px + env(safe-area-inset-bottom));
   }
   .inner {
-    justify-content: center;
     text-align: center;
   }
-  /* Privacy / Terms / Community on one row, Pricing / Delete account /
-     Connect on the next. */
-  .links {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-  }
-  .group {
-    flex-wrap: wrap;
+  .links,
+  .company {
     justify-content: center;
-    gap: 18px;
+    gap: 10px 18px;
   }
 }

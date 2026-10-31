@@ -1,6 +1,18 @@
 import { Button, Icon, JoinButton, Reveal } from '@components/ui';
 import { cx } from '@/utils/cx';
+import { site } from '@data/content';
 import styles from './Pricing.module.css';
+
+/** Don't select the card; on the subscriptions page itself the link's hash
+    wouldn't change, so scroll down to the terms instead. */
+function onPolicyClick(event) {
+  event.stopPropagation();
+  const terms = document.getElementById('policy-text');
+  if (terms) {
+    event.preventDefault();
+    terms.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
 
 export default function PlanCard({
   id,
@@ -14,6 +26,7 @@ export default function PlanCard({
   ctaLabel,
   ctaDisabled = false,
   microcopy,
+  renewal,
   selected = false,
   onSelect,
   delay,
@@ -74,6 +87,16 @@ export default function PlanCard({
         <JoinButton size="lg" fullWidth className={styles.cta}>
           {ctaLabel}
         </JoinButton>
+      )}
+
+      {renewal && (
+        <p className={styles.renewal}>
+          {renewal.text} {renewal.linkLead}{' '}
+          <a href={site.subscriptionsUrl} onClick={onPolicyClick}>
+            {renewal.linkLabel}
+          </a>{' '}
+          {renewal.linkTrail}
+        </p>
       )}
 
       <p className={styles.microcopy}>{microcopy}</p>

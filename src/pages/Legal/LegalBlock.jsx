@@ -1,6 +1,6 @@
 import styles from './Legal.module.css';
 
-/** Renders one body entry: paragraph, sub-heading, bullet or numbered list, or email (inline after a lead-in when `lead` is set). */
+/** Renders one body entry: paragraph, sub-heading, bullet or numbered list, internal link, or email (inline after a lead-in when `lead` is set). */
 export default function LegalBlock({ item }) {
   if (typeof item === 'string') return <p className={styles.p}>{item}</p>;
 
@@ -36,6 +36,16 @@ export default function LegalBlock({ item }) {
         {item.lead}{' '}
         <a className={styles.link} href={`mailto:${item.email}`}>
           {item.email}
+        </a>
+      </p>
+    );
+  }
+
+  if (item.href) {
+    return (
+      <p className={styles.p}>
+        <a className={styles.link} href={item.href}>
+          {item.label}
         </a>
       </p>
     );

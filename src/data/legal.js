@@ -7,6 +7,8 @@
      { sub: '...' }    -> sub-heading
      { ul: [...] }     -> bullet list
      { email: '...' }  -> mailto link
+     { lead, email }   -> sentence ending in an inline mailto link
+     { href, label }   -> internal page link
    A section `id` makes it directly linkable (#/legal/privacy).
 ----------------------------------------------------------------*/
 
@@ -57,38 +59,25 @@ export const legalSections = [
     num: '3',
     title: 'Eligibility',
     body: [
-      'To use CheriPic, you must:',
-      {
-        ul: [
-          'Be at least 18 years of age',
-          'Have legal capacity to enter into binding agreements',
-          'Comply with applicable laws in your jurisdiction',
-          'Provide accurate information',
-        ],
-      },
-      'We reserve the right to verify age and identity at any time.',
-      'Accounts found to belong to persons under 18 years of age may be terminated immediately.',
+      'CheriPic is available only to individuals aged 21 years or older.',
+      'You must provide accurate information, have the legal capacity to enter a binding agreement and comply with our policies and applicable law.',
+      'We require your date of birth during registration. To activate Connect, you must complete our government-issued photo ID and selfie verification process.',
+      'We may request additional information to confirm eligibility. Accounts that do not meet our requirements may be rejected, restricted, suspended or terminated.',
+      'Providing a false age, using a false identity or attempting to bypass verification is prohibited.',
+      { lead: 'If you believe an eligibility decision is incorrect, contact', email: 'support@cheripic.com' },
     ],
   },
   {
+    id: 'availability',
     num: '4',
-    title: 'Global Availability',
+    title: 'Service Availability',
     body: [
-      'CheriPic is designed for global use, including users located in:',
-      {
-        ul: [
-          'United States',
-          'Canada',
-          'United Kingdom',
-          'European Union',
-          'Australia',
-          'New Zealand',
-          'Singapore',
-          'GCC countries',
-          'Other supported jurisdictions',
-        ],
-      },
-      'Users are responsible for ensuring that use of CheriPic is lawful in their country of residence.',
+      'CheriPic is operated by Cave Xpert Inc., a Delaware-incorporated company.',
+      'CheriPic launches its services in selected countries in phases. Registration, introductions, subscriptions and partner offers may have different availability.',
+      'Please check our Service Availability page before registering or purchasing a subscription.',
+      { href: '#/service-availability', label: 'View Service Availability' },
+      'We may restrict services where necessary because of applicable law, payment-provider requirements or operational limitations.',
+      'Our US incorporation does not mean that every service is available in every country. Nothing in these terms limits rights that cannot lawfully be excluded.',
     ],
   },
   {
@@ -602,8 +591,21 @@ export const legalSections = [
     ],
   },
   {
-    id: 'contact',
+    id: 'verification-safety-ai',
     num: '30',
+    title: 'Eligibility, Verification, Safety and AI',
+    body: [
+      'We process registration information, dates of birth and verification information to assess eligibility and protect platform integrity.',
+      'Where you use Connect, this may include government-issued identification, selfies and verification results.',
+      'We also process member reports, relevant reported content and enforcement records to investigate concerns and apply our policies.',
+      'Where you use CheriAI, your messages and relevant information may be processed by the service providers identified in this policy. Required permissions are requested before applicable information is shared.',
+      'Access to sensitive information is limited to authorized personnel and service providers with a legitimate need.',
+      'Retention, deletion, international processing and your privacy rights are explained in the relevant sections of this policy.',
+    ],
+  },
+  {
+    id: 'contact',
+    num: '31',
     title: 'Contact',
     body: [
       'Questions, complaints, legal notices, privacy requests, and support inquiries may be directed to:',

@@ -1,0 +1,27 @@
+/* Revision date under the subtitle — quiet, like the legal page's meta. */
+.updated {
+  margin-top: 10px;
+  font-size: var(--fs-xs);
+  color: var(--muted-dim);
+}
+
+/* The header and the article sit in separate containers, so the legal
+   page's `.head + .doc` spacing can't apply. */
+.doc {
+  padding-top: 40px;
+}
+
+/* The plans close the page and bring their own bottom padding, so drop the
+   page's to avoid a double gap above the footer. */
+.withPlans {
+  padding-bottom: 0;
+}
+
+/* The pricing section paints an opaque `soft` background of its own, which
+   would cut the page glow off in a hard line. Let the gradient run through
+   it, and divide it from the terms with the same hairline as the sections. */
+.withPlans > section {
+  margin-top: 34px;
+  background: transparent;
+  border-top: 1px solid var(--hairline);
+}

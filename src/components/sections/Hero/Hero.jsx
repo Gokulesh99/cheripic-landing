@@ -36,6 +36,8 @@ export default function Hero() {
                   </h2>
                   <p className={styles.cardBody}>{card.body}</p>
                   {card.tagline && <p className={styles.cardTagline}>{card.tagline}</p>}
+                  {card.taglineMicrocopy && <p className={styles.cardTagline}>{card.taglineMicrocopy}</p>}
+                  {card.taglineMicroCopy2 && <p className={styles.cardTagline}>{card.taglineMicroCopy2}</p>}
                 </div>
               </li>
             ))}

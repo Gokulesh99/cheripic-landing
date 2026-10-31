@@ -1,6 +1,6 @@
 import Container from '../Container';
 import { Icon } from '@components/ui';
-import { site } from '@data/content';
+import { footerLinks, site } from '@data/content';
 import styles from './Footer.module.css';
 
 /** wa.me wants the number as digits only — no +, spaces or dashes. */
@@ -11,31 +11,31 @@ export default function Footer({ withStickyCta = false }) {
   return (
     <footer className={`${styles.footer} ${withStickyCta ? styles.withSticky : ''}`}>
       <Container className={styles.inner}>
-        <span>{site.legal}</span>
-        {/* Two groups so the row splits predictably on narrow screens
-            instead of wrapping wherever it runs out of space. */}
         <nav className={styles.links} aria-label="Footer">
-          <div className={styles.group}>
-            <a href={site.privacyUrl}>Privacy</a>
-            <a href={site.termsUrl}>Terms</a>
-            <a href={site.communityUrl}>Community</a>
-            <a href={site.lawEnforcementUrl}>Legal</a>
-          </div>
-          <div className={styles.group}>
-            {/* <a href={site.pricingUrl}>Pricing</a> */}
-            <a href={site.deleteAccountUrl}>Delete account</a>
-            <a
-              className={styles.whatsapp}
-              href={whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`Connect with us on WhatsApp at ${site.whatsappNumber}`}
-            >
-              <Icon name="whatsapp" size={15} className={styles.whatsappMark} />
-              Connect
+          {footerLinks.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
             </a>
-          </div>
+          ))}
+          <a
+            className={styles.whatsapp}
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Connect with us on WhatsApp at ${site.whatsappNumber}`}
+          >
+            <Icon name="whatsapp" size={15} className={styles.whatsappMark} />
+            Connect
+          </a>
         </nav>
+
+        <div className={styles.company}>
+          <p>{site.operator}</p>
+          <p>
+            Support: <a href={`mailto:${site.supportEmail}`}>{site.supportEmail}</a>
+          </p>
+          <p>{site.legal}</p>
+        </div>
       </Container>
     </footer>
   );

@@ -181,6 +181,23 @@
   background: rgba(247, 243, 252, 0.05);
 }
 
+/* Auto-renewal terms under the purchase button. */
+.renewal {
+  font-size: var(--fs-xs);
+  line-height: 1.6;
+  color: var(--muted-dim);
+  text-align: center;
+  margin-top: 12px;
+}
+.renewal a {
+  color: var(--lav-light);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.renewal a:hover {
+  color: var(--pink);
+}
+
 .microcopy {
   font-size: var(--fs-xs);
   color: var(--muted-dim);
