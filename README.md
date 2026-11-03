@@ -88,6 +88,7 @@ route when it starts with `#/`, so in-page anchors (`#top`, `#main`) still work.
 | `#/legal/law-enforcement` (also `#/law-enforcement`) | Law Enforcement Guidelines |
 | `#/legal/subscriptions-refunds` (also `#/pricing`) | Membership plans, then Subscriptions, Cancellation & Refunds |
 | `#/safety` | Safety & Child Protection |
+| `#/legal/sexual-violence` | Sexual Violence |
 | `#/service-availability` | Service Availability |
 | `#/contact` | Contact Us |
 | `#/delete-account` | Account deletion instructions and request form |

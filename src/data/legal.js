@@ -8,6 +8,7 @@
      { ul: [...] }     -> bullet list
      { email: '...' }  -> mailto link
      { lead, email }   -> sentence ending in an inline mailto link
+                          (optional `trail` continues the text after it)
      { href, label }   -> internal page link
    A section `id` makes it directly linkable (#/legal/privacy).
 ----------------------------------------------------------------*/
@@ -604,8 +605,25 @@ export const legalSections = [
     ],
   },
   {
-    id: 'contact',
+    id: 'prohibited-activities',
     num: '31',
+    title: 'Prohibited Activities',
+    body: [
+      'You must not use CheriPic to commit, threaten, promote, arrange or facilitate sexual violence, including sexual assault, rape, unwanted sexual contact or any sexual activity without freely given consent. Sexual coercion, threats, intimidation or exploitation used to obtain sexual activity are prohibited.',
+      'You must not aid, abet, encourage, promote, arrange or facilitate abuse. This includes sexual violence, child sexual abuse or exploitation, human trafficking, harassment, stalking, threats, coercion and non-consensual intimate imagery.',
+      'You must not provide instructions, contacts, resources or other assistance intended to enable such conduct, or recruit or pressure others to participate.',
+      'These prohibitions apply to profiles, photographs, messages, AI interactions and all other use of CheriPic.',
+      'Violations may result in content removal, immediate account restrictions, suspension or permanent termination, subject to applicable law. Relevant information may be preserved and reported to appropriate authorities where required by law.',
+      {
+        lead: 'Report suspected violations through the in-app reporting tools or contact',
+        email: 'support@cheripic.com',
+        trail: '. If someone is in immediate danger, contact local emergency services.',
+      },
+    ],
+  },
+  {
+    id: 'contact',
+    num: '32',
     title: 'Contact',
     body: [
       'Questions, complaints, legal notices, privacy requests, and support inquiries may be directed to:',

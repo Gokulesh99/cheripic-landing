@@ -320,6 +320,39 @@ export const policies = {
     ],
   },
 
+  sexualViolence: {
+    title: 'Sexual Violence',
+    sections: [
+      {
+        id: 'sexual-violence',
+        body: [
+          'CheriPic strictly prohibits sexual violence, including sexual assault, rape, unwanted sexual contact and any sexual activity without freely given consent. Sexual coercion, threats, intimidation or exploitation used to obtain sexual activity are prohibited.',
+          'Members must not use CheriPic to promote, encourage, threaten, arrange or facilitate sexual violence, or share content that glorifies or advocates such conduct.',
+        ],
+      },
+      {
+        id: 'aiding-abuse',
+        title: 'Aiding, Abetting or Encouraging Abuse',
+        body: [
+          'CheriPic strictly prohibits aiding, abetting, encouraging, promoting, arranging or facilitating abuse. This includes sexual violence, child sexual abuse or exploitation, human trafficking, harassment, stalking, threats, coercion and non-consensual intimate imagery.',
+          'Members must not provide instructions, contacts, resources or other assistance intended to enable such conduct, or recruit or pressure others to participate.',
+        ],
+      },
+      {
+        id: 'enforcement',
+        title: 'Enforcement and Reporting',
+        body: [
+          'Violations may result in content removal, immediate account restrictions, suspension or permanent termination. Relevant information may be preserved and reported to appropriate authorities where required by law.',
+          {
+            lead: 'Report suspected violations through the in-app reporting tools or contact',
+            email: SUPPORT,
+            trail: '. If someone is in immediate danger, contact local emergency services.',
+          },
+        ],
+      },
+    ],
+  },
+
   /* Needs legal review, a confirmed support inbox and a named owner for
      legal requests before release. */
   lawEnforcement: {

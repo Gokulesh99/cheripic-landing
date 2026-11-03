@@ -37,6 +37,7 @@ export default function LegalBlock({ item }) {
         <a className={styles.link} href={`mailto:${item.email}`}>
           {item.email}
         </a>
+        {item.trail}
       </p>
     );
   }

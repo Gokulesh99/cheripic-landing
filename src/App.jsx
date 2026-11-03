@@ -24,6 +24,7 @@ const policyRoutes = {
   // Plans and their terms are one page now.
   '/pricing': 'subscriptions',
   '/safety': 'safety',
+  '/legal/sexual-violence': 'sexualViolence',
   '/service-availability': 'availability',
   '/contact': 'contact',
 };
