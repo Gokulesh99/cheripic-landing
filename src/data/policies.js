@@ -147,14 +147,21 @@ export const policies = {
         id: 'sexual-content',
         title: 'Sexual content and exploitation',
         body: [
-          'Pornography, nudity, sexually explicit content, non-consensual intimate material, sexual exploitation, trafficking, prostitution, escort solicitation and compensated sexual arrangements are prohibited.',
+          'CheriPic strictly prohibits sexual violence, including sexual assault, rape, unwanted sexual contact and any sexual activity without freely given consent. Sexual coercion, threats, intimidation or exploitation used to obtain sexual activity are prohibited.','Members must not use CheriPic to promote, encourage, threaten, arrange or facilitate sexual violence, or share content that glorifies or advocates such conduct.',
         ],
       },
       {
-        id: 'child-protection',
-        title: 'Child protection',
+        id: 'aiding-abetting-or-encouraging-abuse',
+        title: 'Aiding, Abetting or Encouraging Abuse',
         body: [
-          'Child sexual abuse and exploitation are strictly prohibited. This includes grooming, sexual solicitation involving minors and child sexual abuse material, including manipulated or AI-generated material.',
+          'CheriPic strictly prohibits aiding, abetting, encouraging, promoting, arranging or facilitating abuse. This includes sexual violence, child sexual abuse or exploitation, human trafficking, harassment, stalking, threats, coercion and non-consensual intimate imagery.','Members must not provide instructions, contacts, resources or other assistance intended to enable such conduct, or recruit or pressure others to participate.',
+        ],
+      },
+      {
+        id: 'enforcement-and-reporting',
+        title: 'Enforcement and Reporting',
+        body: [
+          'Violations may result in content removal, immediate account restrictions, suspension or permanent termination. Relevant information may be preserved and reported to appropriate authorities where required by law.','Report suspected violations through the in-app reporting tools or contact support@cheripic.com. If someone is in immediate danger, contact local emergency services.',
         ],
       },
       {

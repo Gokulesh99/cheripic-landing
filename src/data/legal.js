@@ -622,8 +622,21 @@ export const legalSections = [
     ],
   },
   {
-    id: 'contact',
+    id: 'aiding-abetting-or-encouraging-abuse',
     num: '32',
+    title: 'Aiding, Abetting or Encouraging Abuse',
+    body: [
+      'CheriPic strictly prohibits aiding, abetting, encouraging, promoting, arranging or facilitating abuse. This includes sexual violence, child sexual abuse or exploitation, human trafficking, harassment, stalking, threats, coercion and non-consensual intimate imagery.','Members must not provide instructions, contacts, resources or other assistance intended to enable such conduct, or recruit or pressure others to participate.',
+      // {
+      //   lead: 'Report suspected violations through the in-app reporting tools or contact',
+      //   email: 'support@cheripic.com',
+      //   trail: '. If someone is in immediate danger, contact local emergency services.',
+      // },
+    ],
+  },
+  {
+    id: 'contact',
+    num: '33',
     title: 'Contact',
     body: [
       'Questions, complaints, legal notices, privacy requests, and support inquiries may be directed to:',

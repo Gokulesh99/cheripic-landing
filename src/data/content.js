@@ -34,7 +34,7 @@ export const footerLinks = [
   { label: 'Acceptable Use Policy', href: site.acceptableUseUrl },
   { label: 'Community Guidelines', href: site.communityUrl },
   { label: 'Safety & Child Protection', href: site.safetyUrl },
-  { label: 'Sexual Violence', href: site.sexualViolenceUrl },
+  // { label: 'Sexual Violence', href: site.sexualViolenceUrl },
   { label: 'Law Enforcement Guidelines', href: site.lawEnforcementUrl },
   { label: 'Subscriptions & Refunds', href: site.subscriptionsUrl },
   { label: 'Delete Account', href: site.deleteAccountUrl },
