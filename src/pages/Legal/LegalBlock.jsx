@@ -42,6 +42,19 @@ export default function LegalBlock({ item }) {
     );
   }
 
+  if (item.address) {
+    return (
+      <address className={`${styles.p} ${styles.address}`}>
+        {item.address.map((line, index) => (
+          <span key={line}>
+            {index > 0 && <br />}
+            {line}
+          </span>
+        ))}
+      </address>
+    );
+  }
+
   if (item.href) {
     return (
       <p className={styles.p}>

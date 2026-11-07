@@ -497,23 +497,27 @@ export const policies = {
   /* Keep the legal company name and contact details matched to the
      Stripe account. Add the registered business address once confirmed. */
   contact: {
-    title: 'Contact Us',
+    title: 'Company Information & Contact',
     sections: [
       {
-        id: 'operator',
+        id: 'company',
         body: [
-          'CheriPic is operated by Cave Xpert Inc., a Delaware-incorporated company.',
-          { lead: 'Support:', email: SUPPORT },
+          { sub: 'Company Name' },
+          'Cave Xpert Inc.',
+          { sub: 'Registered Office Address' },
+          { address: ['131 Continental Dr, Suite 305', 'Newark, Delaware 19713', 'United States'] },
+          { sub: 'Customer Support Email' },
+          { email: SUPPORT },
+          { sub: 'Website' },
+          { href: 'https://cheripic.com', label: 'https://cheripic.com' },
+          { sub: 'Platform' },
+          'CheriPic — Relationship Intelligence Platform',
         ],
       },
       {
-        id: 'specific-requests',
-        title: 'Specific requests',
+        id: 'ownership',
         body: [
-          { href: '#/delete-account', label: 'Delete your account' },
-          { href: '#/legal/subscriptions-refunds', label: 'Subscriptions, cancellation & refunds' },
-          { href: '#/safety', label: 'Report a safety or child-safety concern' },
-          { href: '#/legal/law-enforcement', label: 'Law enforcement requests' },
+          'CheriPic is owned and operated by Cave Xpert Inc., a company incorporated in the State of Delaware, United States.',
         ],
       },
     ],

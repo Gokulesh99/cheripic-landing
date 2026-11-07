@@ -9,7 +9,8 @@
      { email: '...' }  -> mailto link
      { lead, email }   -> sentence ending in an inline mailto link
                           (optional `trail` continues the text after it)
-     { href, label }   -> internal page link
+     { href, label }   -> page link
+     { address: [...] } -> postal address, one line per entry
    A section `id` makes it directly linkable (#/legal/privacy).
 ----------------------------------------------------------------*/
 
@@ -640,7 +641,17 @@ export const legalSections = [
     title: 'Contact',
     body: [
       'Questions, complaints, legal notices, privacy requests, and support inquiries may be directed to:',
+      { sub: 'Company Name' },
+      'Cave Xpert Inc.',
+      { sub: 'Registered Office Address' },
+      { address: ['131 Continental Dr, Suite 305', 'Newark, Delaware 19713', 'United States'] },
+      { sub: 'Customer Support Email' },
       { email: 'support@cheripic.com' },
+      { sub: 'Website' },
+      { href: 'https://cheripic.com', label: 'https://cheripic.com' },
+      { sub: 'Platform' },
+      'CheriPic — Relationship Intelligence Platform',
+      'CheriPic is owned and operated by Cave Xpert Inc., a company incorporated in the State of Delaware, United States.',
     ],
   },
 ];

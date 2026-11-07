@@ -197,6 +197,11 @@
   margin-bottom: 14px;
 }
 
+/* <address> is italic by default; keep it in the body voice. */
+.address {
+  font-style: normal;
+}
+
 .sub {
   font-family: var(--font-body);
   font-size: 13px;
